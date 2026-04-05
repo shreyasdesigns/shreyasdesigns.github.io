@@ -3,18 +3,17 @@ const body = document.body;
 
 const savedTheme = localStorage.getItem("theme");
 
-if (savedTheme) {
-  body.setAttribute("data-theme", savedTheme);
+if (savedTheme === "dark") {
+  body.setAttribute("data-theme", "dark");
+  toggle.checked = true;
 }
 
-toggle.addEventListener("click", () => {
-  const current = body.getAttribute("data-theme");
-
-  if (current === "dark") {
-    body.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
-  } else {
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
     body.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
+  } else {
+    body.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
   }
 });
