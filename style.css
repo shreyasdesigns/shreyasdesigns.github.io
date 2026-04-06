@@ -222,7 +222,7 @@ h3 {
 .project-tabs {
   display: flex;
   width: 100%;
-  background: #F4F4F4;
+  background: var(--toggle-track);
   padding: 4px;
   border-radius: 8px;
   margin-bottom: 20px;
