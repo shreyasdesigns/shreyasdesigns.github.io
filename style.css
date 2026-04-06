@@ -8,6 +8,7 @@
   --text-primary: #1E174A;
   --text-secondary: #6E6A81;
   --divider: #BFBBD9;
+  --toggle-track: #F4F4F4;
 
   --accent: #6A50FF;
   --accent-hover: #826CFF;
@@ -24,6 +25,8 @@
   --text-primary: #EAEAEA;
   --text-secondary: #999999;
   --divider: #333333;
+  --toggle-track: #0F0F0F;
+   
   --accent: #826CFF;
 }
 
@@ -235,12 +238,15 @@ h3 {
   color: var(--text-primary);
   border-radius: 6px;
   text-align: center;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
 }
 
 .tab.active {
   background: var(--accent);
   color: white;
-  box-shadow: 0 2px 6px rgba(79, 59, 191, 0.25);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-active), transparent 50%);
 }
 
 .project-card + .project-card {
