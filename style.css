@@ -24,8 +24,11 @@
   --text-primary: #EAEAEA;
   --text-secondary: #999999;
   --divider: #333333;
-
   --accent: #826CFF;
+}
+
+[data-theme="dark"] .project-card {
+  background: rgba(255, 255, 255, 0.04);
 }
 
 /* =====================
@@ -162,12 +165,23 @@ h3 {
   padding: 40px 0;
 }
 
+.project-header {
+  grid-column: span 2;
+  margin-bottom: 16px;
+}
+
+.project-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
-  padding: 40px 0;
-  border-bottom: 1px solid var(--divider);
+  padding: 32px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .project-image img {
@@ -176,27 +190,61 @@ h3 {
   display: block;
 }
 
+.project-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.project-footer {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+}
+
+.project-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--divider);
+  font-size: 14px;
+}
 .project-tabs {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   background: #F4F4F4;
   padding: 4px;
   border-radius: 8px;
   margin-bottom: 20px;
+  gap: 4px;
 }
 
 .tab {
+  flex: 1;
   border: none;
   background: transparent;
   padding: 10px 16px;
   cursor: pointer;
   color: var(--text-primary);
-  border-radius: 8px;
+  border-radius: 6px;
+  text-align: center;
 }
 
 .tab.active {
   background: var(--accent);
   color: white;
   box-shadow: 0 2px 6px rgba(79, 59, 191, 0.25);
+}
+
+.project-card + .project-card {
+  margin-top: 40px;
 }
 
 /* =====================
@@ -218,31 +266,6 @@ h3 {
   border: 1px solid var(--divider);
   border-radius: 8px;
   white-space: nowrap;
-}
-
-.project-text {
-  font-size: 16px;
-  color: var(--text-secondary);
-}
-
-.project-footer {
-  grid-column: span 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.project-chips {
-  display: flex;
-  gap: 12px;
-}
-
-.chip {
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--divider);
-  font-size: 14px;
 }
 
 /* =====================
