@@ -162,6 +162,43 @@ h3 {
   padding: 40px 0;
 }
 
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.project-tabs {
+  display: inline-flex;
+  background: #F4F4F4;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: var(--text-primary);
+  border-radius: 8px;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 6px rgba(79, 59, 191, 0.25);
+}
+
 /* =====================
    CERTIFICATIONS
 ===================== */
@@ -181,6 +218,31 @@ h3 {
   border: 1px solid var(--divider);
   border-radius: 8px;
   white-space: nowrap;
+}
+
+.project-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.project-footer {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.project-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--divider);
+  font-size: 14px;
 }
 
 /* =====================
