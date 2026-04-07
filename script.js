@@ -173,3 +173,7 @@ navLinks.forEach(link => {
     navTrack.style.setProperty("--nav-width", rect.width + "px");
   });
 });
+
+navTrack.addEventListener("mouseleave", () => {
+  navTrack.style.setProperty("--nav-width", "0px");
+});
