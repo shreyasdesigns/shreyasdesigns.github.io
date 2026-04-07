@@ -32,6 +32,31 @@
 }
 
 /* =====================
+   BREAKPOINTS
+===================== */
+
+@media (max-width: 768px) {
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-body {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-right {
+    border-left: none;
+    padding-left: 0;
+  }
+
+}
+
+/* =====================
    RESET
 ===================== */
 
