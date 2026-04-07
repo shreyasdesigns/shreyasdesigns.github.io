@@ -18,6 +18,33 @@ toggle.addEventListener("change", () => {
   }
 });
 
+const icon = document.querySelector(".slider .icon");
+
+function updateIcon(theme) {
+  icon.innerHTML = theme === "dark"
+    ? `<i data-lucide="moon"></i>`
+    : `<i data-lucide="sun"></i>`;
+
+  lucide.createIcons();
+}
+
+const transitionEl = document.querySelector(".theme-transition");
+
+toggle.addEventListener("change", (e) => {
+  const rect = e.target.getBoundingClientRect();
+
+  document.documentElement.style.setProperty("--x", rect.left + "px");
+  document.documentElement.style.setProperty("--y", rect.top + "px");
+
+  transitionEl.animate(
+    [
+      { width: "0", height: "0", opacity: 1 },
+      { width: "200vw", height: "200vw", opacity: 1 }
+    ],
+    { duration: 500, easing: "ease-out" }
+  );
+});
+
 // Project Tab Switching
 
 document.querySelectorAll(".project-card").forEach(card => {
@@ -45,6 +72,26 @@ document.querySelectorAll(".project-card").forEach(card => {
     });
   });
 
+});
+
+const tabTracks = document.querySelectorAll(".project-tabs");
+
+tabTracks.forEach(track => {
+  const tabs = track.querySelectorAll(".tab");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      track.style.setProperty("--tab-index", index);
+      track.style.setProperty("--tab-count", tabs.length);
+
+      track.style.setProperty(
+        "--translateX",
+        `calc(${index} * 100%)`
+      );
+
+      track.querySelector("::after");
+    });
+  });
 });
 
 
@@ -110,4 +157,19 @@ toggleBtn.addEventListener("click", () => {
     moreSection.classList.add("hidden");
     toggleBtn.textContent = "Show more ↓";
   }
+});
+
+/* Nav Animation */
+
+const navLinks = document.querySelectorAll(".nav-links a");
+const navTrack = document.querySelector(".nav-links");
+
+navLinks.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    const rect = link.getBoundingClientRect();
+    const parentRect = navTrack.getBoundingClientRect();
+
+    navTrack.style.setProperty("--nav-left", rect.left - parentRect.left + "px");
+    navTrack.style.setProperty("--nav-width", rect.width + "px");
+  });
 });
