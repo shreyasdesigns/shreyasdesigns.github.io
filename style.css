@@ -281,6 +281,55 @@ h3 {
   border-radius: 8px;
 }
 
+
+/* =====================
+   EXPERIENCE
+===================== */
+
+.timeline {
+  margin-top: 40px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 120px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--divider);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+/* Left Side */
+.timeline-duration {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Right Side */
+.company {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.timeline-description {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+
+
 /* =====================
    CERTIFICATIONS
 ===================== */
