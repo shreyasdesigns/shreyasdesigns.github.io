@@ -291,14 +291,15 @@ h3 {
   position: relative;
 }
 
-.timeline::before {
+.timeline-item::before {
   content: "";
   position: absolute;
-  left: 120px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--divider);
+  left: 116px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
 }
 
 .timeline-item {
@@ -307,6 +308,12 @@ h3 {
   gap: 32px;
   margin-bottom: 48px;
   position: relative;
+  transition: background 0.2s ease;
+  padding: 8px 0;
+}
+
+.timeline-item:hover {
+  background: rgba(106, 80, 255, 0.05);
 }
 
 /* Left Side */
@@ -328,6 +335,14 @@ h3 {
   line-height: 1.6;
 }
 
+/* Hidden Section */
+.hidden {
+  display: none;
+}
+
+.timeline-toggle {
+  margin-top: 16px;
+}
 
 
 /* =====================
