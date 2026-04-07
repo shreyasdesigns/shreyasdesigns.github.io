@@ -13,6 +13,10 @@
   --accent-hover: #826CFF;
   --accent-active: #4F3BBF;
 
+  --toggle-track: #DAD7FF;
+  --tab-track: #F4F4F4;
+  --tab-text: #1E174A;
+
   --max-width: 1100px;
   --spacing-section: 100px;
 }
@@ -24,6 +28,10 @@
   --text-primary: #EAEAEA;
   --text-secondary: #999999;
   --divider: #333333;
+
+  --toggle-track: #2A2A2A;
+  --tab-track: #1A1A1A;
+  --tab-text: #CCCCCC;
    
   --accent: #826CFF;
   --accent-hover: #9A86FF;
@@ -331,6 +339,10 @@ h3 {
   padding: 10px 16px;
   cursor: pointer;
   color: var(--tab-text);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: color 0.2s ease;
 }
 
@@ -339,7 +351,7 @@ h3 {
 }
 
 .tab:hover {
-  color: var(--accent);
+  background: rgba(106, 80, 255, 0.08);
 }
 
 .project-card + .project-card {
@@ -356,6 +368,15 @@ h3 {
   gap: 8px;
   margin-bottom: 32px;
   flex-wrap: wrap;
+  background: var(--tab-track);
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.approach-tabs .tab.active {
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
 }
 
 .approach-body {
