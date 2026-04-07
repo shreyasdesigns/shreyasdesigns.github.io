@@ -547,7 +547,7 @@ input:checked + .slider::before {
   background: var(--bg-solid);
   pointer-events: none;
   z-index: 999;
-  clip-path: circle(0px at 50% 50%);
+  clip-path: circle(0px at var(--x, 50%) var(--y, 50%));
 }
 
 /* =====================
