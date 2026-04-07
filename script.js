@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     transitionEl.animate(
       [
         { clipPath: `circle(0px at ${x}px ${y}px)` },
-        { clipPath: `circle(1500px at ${x}px ${y}px)` }
+        { clipPath: `circle(150% at ${x}px ${y}px)` }
       ],
       {
         duration: 500,
