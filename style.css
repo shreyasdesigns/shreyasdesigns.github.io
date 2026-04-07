@@ -542,12 +542,7 @@ input:checked + .slider::before {
 }
 
 .theme-transition {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-solid);
-  pointer-events: none;
-  z-index: 999;
-  clip-path: circle(0px at var(--x, 50%) var(--y, 50%));
+  display: none;
 }
 
 /* =====================
