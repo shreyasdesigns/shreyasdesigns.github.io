@@ -65,6 +65,10 @@ body {
   min-height: 80vh;
 }
 
+.approach {
+  margin-top: 32px;
+}
+
 /* =====================
    NAV
 ===================== */
@@ -245,6 +249,36 @@ h3 {
 
 .project-card + .project-card {
   margin-top: 40px;
+}
+
+
+/* =====================
+   DESIGN APPROACH
+===================== */
+
+.approach-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.approach-body {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.approach-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.approach-visual img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 /* =====================
