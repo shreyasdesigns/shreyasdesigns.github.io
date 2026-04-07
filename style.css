@@ -78,6 +78,7 @@ body {
   top: 0;
   background: var(--bg-solid);
   border-bottom: 1px solid var(--divider);
+  z-index: 10;
 }
 
 .nav-inner {
