@@ -46,32 +46,45 @@
   <!-- WORK -->
   <section id="work" class="section container">
     <h2>Selected Work</h2>
-    <div class="project-card">
+    <div class="project-card" data-project='{
+      "overview": {
+        "text": "Overview content goes here.",
+        "image": "https://via.placeholder.com/600x400"
+      },
+      "research": {
+        "text": "Research insights and findings.",
+        "image": "https://via.placeholder.com/600x400?text=Research"
+      },
+      "planning": {
+        "text": "Planning decisions and strategy.",
+        "image": "https://via.placeholder.com/600x400?text=Planning"
+      },
+      "design": {
+        "text": "Final design and execution.",
+        "image": "https://via.placeholder.com/600x400?text=Design"
+      }
+    }'>
     <div class="project-header">
       <h3>Document Viewer</h3>
       <p class="project-meta">Enterprise • Construction • Workflow Design</p>
     </div>
-      <!-- IMAGE -->
       <div class="project-image">
-        <img src="https://via.placeholder.com/600x400" alt="">
+        <img src="https://via.placeholder.com/600x400">
       </div>
-
-      <!-- CONTENT -->
+      
       <div class="project-content">
-    
-        <!-- TOGGLE -->
+      
         <div class="project-tabs">
-          <button class="tab active">Overview</button>
-          <button class="tab">Research</button>
-          <button class="tab">Planning</button>
-          <button class="tab">Design</button>
+          <button class="tab active" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="research">Research</button>
+          <button class="tab" data-tab="planning">Planning</button>
+          <button class="tab" data-tab="design">Design</button>
         </div>
-    
-        <!-- TEXT -->
+      
         <p class="project-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Overview content goes here.
         </p>
-    
+      
       </div>
     
       <!-- FOOTER -->
