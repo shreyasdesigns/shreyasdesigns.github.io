@@ -291,29 +291,16 @@ h3 {
   position: relative;
 }
 
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: 116px;
-  top: 6px;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-
 .timeline-item {
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 32px;
   margin-bottom: 48px;
-  position: relative;
-  transition: background 0.2s ease;
-  padding: 8px 0;
 }
 
-.timeline-item:hover {
-  background: rgba(106, 80, 255, 0.05);
+.timeline-right {
+  border-left: 1px solid var(--divider);
+  padding-left: 24px;
 }
 
 /* Left Side */
