@@ -24,33 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.checked = savedTheme === "dark";
   updateIcon(savedTheme);
 
-  toggle.addEventListener("change", (e) => {
-
+  toggle.addEventListener("change", () => {
     const theme = toggle.checked ? "dark" : "light";
-
-    /* ===== FIXED RADIAL ORIGIN ===== */
-
-    const rect = e.target.getBoundingClientRect();
-
-    const x = rect.left + rect.width / 2;
-    const y = rect.top + rect.height / 2;
-
-    transitionEl.style.setProperty("--x", `${x}px`);
-    transitionEl.style.setProperty("--y", `${y}px`);
-
-    transitionEl.animate(
-      [
-        { clipPath: `circle(0px at ${x}px ${y}px)` },
-        { clipPath: `circle(150% at ${x}px ${y}px)` }
-      ],
-      {
-        duration: 500,
-        easing: "ease-out"
-      }
-    );
-
+  
     body.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+  
     updateIcon(theme);
   });
 
