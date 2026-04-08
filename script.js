@@ -191,7 +191,6 @@ window.addEventListener("scroll", () => {
    BOTTOM NAV ACTIVE STATE
 ===================== */
 
-const sections = document.querySelectorAll(".case-project");
 const bottomLinks = document.querySelectorAll(".bottom-link");
 
 window.addEventListener("scroll", () => {
