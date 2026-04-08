@@ -186,3 +186,30 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+/* =====================
+   BOTTOM NAV ACTIVE STATE
+===================== */
+
+const sections = document.querySelectorAll(".case-project");
+const bottomLinks = document.querySelectorAll(".bottom-link");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 200;
+    if (scrollY >= top) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  bottomLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+
+});
