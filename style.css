@@ -612,3 +612,85 @@ input:checked + .slider::before {
   opacity: 0.6;
   transform: translateY(0);
 }
+
+/* =====================
+   CASE STUDIES HTML
+===================== */
+
+@media (max-width: 768px) {
+
+  .case-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .case-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    background: var(--bg-solid);
+    border-top: 1px solid var(--divider);
+    padding: 12px;
+  }
+
+  .case-content {
+    padding-bottom: 80px;
+  }
+
+}
+
+.case-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.case-nav {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.case-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.case-link:hover {
+  color: var(--accent);
+}
+
+.case-link.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.case-content {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.case-section {
+  max-width: 700px;
+}
+
+.case-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.back-btn {
+  text-decoration: none;
+  color: var(--accent);
+}
+
