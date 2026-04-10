@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+
+  <!-- NAV (same as index, simplified) -->
+  <header class="nav">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="logo">Home</a>
+
+      <nav class="nav-links">
+        <a href="#" class="active">Projects</a>
+      </nav>
+
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider">
+          <span class="icon"></span>
+        </span>
+      </label>
+
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="case-container container">
+
+    <!-- PAGE HEADER -->
+    <section class="case-header">
+      <h1>Projects & Case Studies</h1>
+    </section>
+
+    <!-- =====================
+         PROJECT
+    ===================== -->
+
+    <section id="viewer" class="case-project">
+
+      <h2>Document Viewer</h2>
+      <p class="project-meta">Enterprise • BIM • Large-scale workflows</p>
+
+      <!-- ===== SET 1 ===== -->
+
+      <div class="case-overview">
+        <div class="case-image"></div>
+
+        <div class="case-text">
+          <h3>Overview</h3>
+          <p>
+            Designing a multi-dimensional viewer that integrates 2D drawings, models,
+            and reality capture into a unified workflow.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-images">
+        <div class="case-image large"></div>
+        <div class="case-image large"></div>
+      </div>
+
+      <div class="case-text-block">
+        <p>
+          The challenge was handling scale while maintaining clarity across document relationships,
+          versioning, and review workflows.
+        </p>
+      </div>
+
+      <!-- ===== SET 2 ===== -->
+
+      <div class="case-overview">
+        <div class="case-image"></div>
+
+        <div class="case-text">
+          <h3>Research</h3>
+          <p>
+            Conducted usability testing and workflow analysis across enterprise users
+            to identify bottlenecks in document navigation and collaboration.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-images">
+        <div class="case-image large"></div>
+        <div class="case-image large"></div>
+      </div>
+
+      <div class="case-text-block">
+        <p>
+          Insights revealed fragmentation between tools and lack of context while reviewing documents.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FLOATING BOTTOM NAV -->
+  <div class="case-bottom-nav">
+    <a href="#viewer" class="bottom-link active">Viewer</a>
+    <a href="#search" class="bottom-link">Search</a>
+    <a href="#workflow" class="bottom-link">Workflow</a>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

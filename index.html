@@ -7,7 +7,7 @@
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,7 +16,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#" class="logo">Home</a>
+      <a href="#" class="logo">Shreyas Tripathy</a>
 
       <nav class="nav-links">
         <a href="#work">Work</a>
@@ -27,51 +27,72 @@
 
       <label class="theme-switch">
         <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
+        <span class="slider">
+          <span class="icon"></span>
+        </span>
       </label>
     </div>
   </header>
-
+  
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
-      <h1>Shreyas Tripathy</h1>
-      <p class="subtitle">Senior Product Designer</p>
-      <p class="description">
-        Designing enterprise workflows and complex systems
-      </p>
+      <h1>Delivering efficient, impactful end-to-end UX strategy.</h1>
+      <p class="subtitle">Senior UX and Product Designer with 11 years of experience. Skilled in solving complex problems through research and user journeys to offer scalable, tech-forward design systems.</p>
     </div>
+
+    <!--
+    <div>
+      <a class="btn btn-tertiary"><div class="icon-move-down"> Learn more about me</div></a>
+      
+      <a class="btn btn-primary"><div class="icon-mail"></div> Contact Me</a>
+      <a class="btn btn-secondary"><div class="icon-download"></div> Download Resume</a>
+    </div>
+    -->
   </section>
 
   <!-- WORK -->
   <section id="work" class="section container">
     <h2>Selected Work</h2>
-    <div class="project-card">
+    <div class="project-card" data-project='{
+      "overview": {
+        "text": "Overview content goes here.",
+        "image": "https://via.placeholder.com/600x400"
+      },
+      "research": {
+        "text": "Research insights and findings.",
+        "image": "https://via.placeholder.com/600x400?text=Research"
+      },
+      "planning": {
+        "text": "Planning decisions and strategy.",
+        "image": "https://via.placeholder.com/600x400?text=Planning"
+      },
+      "design": {
+        "text": "Final design and execution.",
+        "image": "https://via.placeholder.com/600x400?text=Design"
+      }
+    }'>
     <div class="project-header">
       <h3>Document Viewer</h3>
       <p class="project-meta">Enterprise • Construction • Workflow Design</p>
     </div>
-      <!-- IMAGE -->
       <div class="project-image">
-        <img src="https://via.placeholder.com/600x400" alt="">
+        <img src="https://via.placeholder.com/600x400">
       </div>
-
-      <!-- CONTENT -->
+      
       <div class="project-content">
-    
-        <!-- TOGGLE -->
+      
         <div class="project-tabs">
-          <a class="tab active">Overview</a>
-          <a class="tab">Research</a>
-          <a class="tab">Planning</a>
-          <a class="tab">Design</a>
+          <a class="tab active" data-tab="overview">Overview</a>
+          <a class="tab" data-tab="research">Research</a>
+          <a class="tab" data-tab="planning">Planning</a>
+          <a class="tab" data-tab="design">Design</a>
         </div>
-    
-        <!-- TEXT -->
+      
         <p class="project-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Overview content goes here.
         </p>
-    
+      
       </div>
     
       <!-- FOOTER -->
@@ -85,35 +106,104 @@
         </div>
     
         <!-- CTA -->
-        <a href="#" class="btn btn-secondary">Open Project</a>
+        <a href="case-studies.html#viewer" class="btn btn-secondary">Open Project</a>
     
       </div>
     
     </div>
   </section>
 
-  <!-- SYSTEM -->
+  <!-- DESIGN APPROACH -->
   <section id="system" class="section container">
     <h2>How I approach complex systems</h2>
-    <p>Breaking down workflows, structuring capabilities, designing for scale.</p>
+    <div class="approach">
+  
+      <!-- TABS -->
+      <div class="approach-tabs">
+        <a class="tab active" data-tab="workshops">Workshops</a>
+        <a class="tab" data-tab="flows">User Flows</a>
+        <a class="tab" data-tab="journeys">Journey Mapping</a>
+        <a class="tab" data-tab="architecture">Feature Architecture</a>
+        <a class="tab" data-tab="testing">Usability Testing</a>
+      </div>
+  
+      <!-- CONTENT -->
+      <div class="approach-body">
+        <div class="approach-text">
+          Facilitating workshops to align stakeholders, define problems, and establish direction early.
+        </div>
+  
+        <div class="approach-visual">
+          <img src="https://via.placeholder.com/600x400" alt="">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="section container">
+  
     <h2>Experience</h2>
-    <div class="timeline-item">
-      <h3>Senior UX Designer</h3>
-      <p>Oracle • 2019 – 2026</p>
-    </div>
-  </section>
+  
+    <div class="timeline">
 
-  <section id="certifications" class="section container certifications">
-    <h2>Certifications</h2>
-    <div class="cert-row">
-      <div class="cert">AI for UX</div>
-      <div class="cert">JTBD</div>
-      <div class="cert">Gen AI UX</div>
+      <!-- ORACLE -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="timeline-duration">2019 — 2026</span>
+        </div>
+    
+        <div class="timeline-right">
+          <h3>Senior Product Designer</h3>
+          <p class="company">Oracle</p>
+    
+          <p class="timeline-description">
+            Led UX for document management and workflow systems within Aconex.
+            Worked on redesigns including search, issue management, and a multi-dimensional viewer.
+          </p>
+        </div>
+      </div>
+    
+      <!-- APTEAN -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="timeline-duration">2017 — 2019</span>
+        </div>
+    
+        <div class="timeline-right">
+          <h3>UX Designer</h3>
+          <p class="company">Aptean</p>
+    
+          <p class="timeline-description">
+            Designed enterprise workflows and improved usability across ERP systems.
+          </p>
+        </div>
+      </div>
+    
+      <!-- HIDDEN OLDER -->
+      <div class="timeline-more hidden">
+    
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-duration">2015 — 2017</span>
+          </div>
+    
+          <div class="timeline-right">
+            <h3>Designer</h3>
+            <p class="company">Earlier Company</p>
+            <p class="timeline-description">
+              Worked on early-stage design projects and foundational UX skills.
+            </p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- TOGGLE -->
+      <a class="timeline-toggle btn btn-tertiary">Show more ↓</a>
+    
     </div>
+  
   </section>
   
   <!-- CONTACT -->
