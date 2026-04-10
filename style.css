@@ -8,6 +8,7 @@
   --text-primary: #1E174A;
   --text-secondary: #6E6A81;
   --divider: #BFBBD9;
+  --toggle-track: #F4F4F4;
 
   --accent: #6A50FF;
   --accent-hover: #826CFF;
@@ -340,6 +341,9 @@ h3 {
   cursor: pointer;
   color: var(--tab-text);
   text-align: center;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -348,6 +352,7 @@ h3 {
 
 .tab.active {
   color: white;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-active), transparent 50%);
 }
 
 .tab:hover {
