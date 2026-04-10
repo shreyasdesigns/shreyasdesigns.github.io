@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         textEl.textContent = content.text;
         imageEl.src = content.image;
 
-        track.style.setProperty("--translateX", `calc(${index} * 100%)`);
+        track.style.setProperty("--translateX", `calc((${index} * (100% - 2.${index}px)`);
       });
     });
 
