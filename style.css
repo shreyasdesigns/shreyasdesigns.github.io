@@ -301,6 +301,35 @@ h3 {
   transform: scale(1);
 }
 
+/* Image Preview */
+
+.image-preview {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+.image-preview img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.image-preview.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .project-text {
   font-size: 16px;
   color: var(--text-secondary);
