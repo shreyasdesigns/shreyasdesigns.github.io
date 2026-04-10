@@ -144,7 +144,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = data[key];
 
         textEl.innerHTML = content.text;
-        imageEl.src = content.image;
+        // IMAGE TRANSITION
+        imageEl.classList.add("fade-out");
+        
+        setTimeout(() => {
+          const img = new Image();
+          img.src = content.image;
+          
+          img.onload = () => {
+            imageEl.src = content.image;
+        
+            imageEl.classList.remove("fade-out");
+            imageEl.classList.add("fade-in");
+        
+            setTimeout(() => {
+              imageEl.classList.remove("fade-in");
+            }, 250);
+          };
+        }, 150);
       });
     });
 
@@ -221,4 +238,22 @@ window.addEventListener("scroll", () => {
     }
   });
 
+});
+
+/* =====================
+   IMAGE PREVIEW
+===================== */
+
+const preview = document.querySelector(".image-preview");
+const previewImg = preview?.querySelector("img");
+
+document.querySelectorAll(".project-image img").forEach(img => {
+  img.addEventListener("click", () => {
+    previewImg.src = img.src;
+    preview.classList.add("active");
+  });
+});
+
+preview?.addEventListener("click", () => {
+  preview.classList.remove("active");
 });
