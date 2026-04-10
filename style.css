@@ -321,14 +321,14 @@ h3 {
   top: 4px;
   bottom: 4px;
   left: 4px;
-  width: calc(25% - 4px);
+  width: calc((100% - 8px) / var(--tab-count));
   background: var(--accent);
   border-radius: 6px;
   transition: transform 0.3s ease;
   z-index: 0;
 
   transform: translateX(var(--translateX, 0));
-  width: calc(100% / var(--tab-count, 4));
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-active), transparent 50%);
 }
 
 .tab {
@@ -352,7 +352,6 @@ h3 {
 
 .tab.active {
   color: white;
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-active), transparent 50%);
 }
 
 .tab:hover {
@@ -361,6 +360,23 @@ h3 {
 
 .project-card + .project-card {
   margin-top: 40px;
+}
+
+.project-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-text li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.project-text li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 
