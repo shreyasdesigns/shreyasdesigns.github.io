@@ -8,14 +8,13 @@
   --text-primary: #1E174A;
   --text-secondary: #6E6A81;
   --divider: #BFBBD9;
-  --toggle-track: #F4F4F4;
 
   --accent: #6A50FF;
   --accent-hover: #826CFF;
   --accent-active: #4F3BBF;
 
   --toggle-track: #E9E9E9;
-  --tab-track: #F4F4F4;
+  --tab-track: #E9E9E9;
   --tab-text: #1E174A;
 
   --max-width: 1100px;
@@ -30,7 +29,7 @@
   --text-secondary: #999999;
   --divider: #333333;
 
-  --toggle-track: #2A2A2A;
+  --toggle-track: #2B2B2B;
   --tab-track: #2B2B2B;
   --tab-text: #CCCCCC;
    
@@ -279,7 +278,7 @@ h3 {
   height: 320px;
   overflow: hidden;
   border-radius: 12px;
-  background: #E9E9E9;
+  background: var(--tab-track);
 }
 
 .project-image img {
@@ -288,6 +287,18 @@ h3 {
   object-fit: contain;
   border-radius: 12px;
   display: block;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+
+.project-image img.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.project-image img.fade-in {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-text {
