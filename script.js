@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const key = tab.dataset.tab;
         const content = data[key];
 
-        textEl.textContent = content.text;
+        textEl.innerHTML = content.text;
         imageEl.src = content.image;
       });
     });
