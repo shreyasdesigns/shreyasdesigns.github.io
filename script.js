@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("theme-toggle");
   const body = document.body;
   const icon = document.querySelector(".slider .icon");
-  const transitionEl = document.querySelector(".theme-transition");
 
   function updateIcon(theme) {
+    if (!icon) return;
+
     icon.innerHTML = theme === "dark"
       ? `<i data-lucide="moon"></i>`
       : `<i data-lucide="sun"></i>`;
@@ -21,17 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const savedTheme = localStorage.getItem("theme") || "light";
   body.setAttribute("data-theme", savedTheme);
-  toggle.checked = savedTheme === "dark";
-  updateIcon(savedTheme);
 
-  toggle.addEventListener("change", () => {
-    const theme = toggle.checked ? "dark" : "light";
-  
-    body.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  
-    updateIcon(theme);
-  });
+  if (toggle) {
+    toggle.checked = savedTheme === "dark";
+
+    toggle.addEventListener("change", () => {
+      const theme = toggle.checked ? "dark" : "light";
+
+      body.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+
+      updateIcon(theme);
+    });
+  }
+
+  updateIcon(savedTheme);
 
   /* =====================
      PROJECT TABS
@@ -39,14 +44,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".project-card").forEach(card => {
 
-    const data = JSON.parse(card.dataset.project);
+    let data;
+
+    try {
+      data = JSON.parse(card.dataset.project);
+    } catch (e) {
+      console.error("Invalid JSON in project-card", e);
+      return;
+    }
+
     const tabs = card.querySelectorAll(".tab");
     const textEl = card.querySelector(".project-text");
     const imageEl = card.querySelector(".project-image img");
     const track = card.querySelector(".project-tabs");
 
+    if (!tabs.length || !textEl || !imageEl || !track) return;
+
     track.style.setProperty("--tab-count", tabs.length);
 
+    // ✅ INITIAL LOAD (fixes overview not loading)
+    const defaultTab = card.querySelector(".tab.active");
+    if (defaultTab) {
+      const defaultKey = defaultTab.dataset.tab;
+      const defaultContent = data[defaultKey];
+
+      if (defaultContent) {
+        textEl.innerHTML = defaultContent.text;
+        imageEl.src = defaultContent.image;
+      }
+    }
+
+    // ✅ INITIAL INDICATOR POSITION
     const activeIndex = [...tabs].findIndex(t => t.classList.contains("active"));
     track.style.setProperty("--translateX", `calc(${activeIndex} * 100%)`);
 
@@ -60,10 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = data[key];
         if (!content) return;
 
-        textEl.textContent = content.text;
+        // ✅ HTML rendering fix
+        textEl.innerHTML = content.text;
         imageEl.src = content.image;
 
-        track.style.setProperty("--translateX", `calc((${index} * (100% - 2.${index}px)`);
+        track.style.setProperty(
+          "--translateX", `calc(${index} * 100%)`);
       });
     });
 
@@ -101,6 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabs = section.querySelectorAll(".tab");
     const textEl = section.querySelector(".approach-text");
     const imageEl = section.querySelector(".approach-visual img");
+
+    if (!tabs.length || !textEl || !imageEl) return;
 
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
@@ -146,51 +178,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-links a");
   const navTrack = document.querySelector(".nav-links");
 
-  navLinks.forEach(link => {
-    link.addEventListener("mouseenter", () => {
-      const rect = link.getBoundingClientRect();
-      const parentRect = navTrack.getBoundingClientRect();
+  if (navTrack) {
+    navLinks.forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        const rect = link.getBoundingClientRect();
+        const parentRect = navTrack.getBoundingClientRect();
 
-      navTrack.style.setProperty("--nav-left", rect.left - parentRect.left + "px");
-      navTrack.style.setProperty("--nav-width", rect.width + "px");
+        navTrack.style.setProperty("--nav-left", rect.left - parentRect.left + "px");
+        navTrack.style.setProperty("--nav-width", rect.width + "px");
+      });
     });
-  });
 
-  navTrack.addEventListener("mouseleave", () => {
-    navTrack.style.setProperty("--nav-width", "0px");
-  });
-});
+    navTrack.addEventListener("mouseleave", () => {
+      navTrack.style.setProperty("--nav-width", "0px");
+    });
+  }
 
-/* =====================
-   CASE STUDY PAGE
-===================== */
-
-const sections = document.querySelectorAll(".case-section");
-const links = document.querySelectorAll(".case-link");
-
-window.addEventListener("scroll", () => {
-
-  let current = "";
-
-  sections.forEach(section => {
-    const top = section.offsetTop - 120;
-    if (scrollY >= top) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  links.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
 });
 
 /* =====================
    BOTTOM NAV ACTIVE STATE
 ===================== */
 
+const sections = document.querySelectorAll(".case-project");
 const bottomLinks = document.querySelectorAll(".bottom-link");
 
 window.addEventListener("scroll", () => {
