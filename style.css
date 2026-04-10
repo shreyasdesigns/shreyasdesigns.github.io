@@ -14,7 +14,7 @@
   --accent-hover: #826CFF;
   --accent-active: #4F3BBF;
 
-  --toggle-track: #DAD7FF;
+  --toggle-track: #E9E9E9;
   --tab-track: #F4F4F4;
   --tab-text: #1E174A;
 
@@ -31,7 +31,7 @@
   --divider: #333333;
 
   --toggle-track: #2A2A2A;
-  --tab-track: #1A1A1A;
+  --tab-track: #2B2B2B;
   --tab-text: #CCCCCC;
    
   --accent: #826CFF;
@@ -273,9 +273,20 @@ h3 {
   background: rgba(0, 0, 0, 0.02);
 }
 
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #E9E9E9;
+}
+
 .project-image img {
   width: 100%;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
   display: block;
 }
 
