@@ -777,3 +777,185 @@ input:checked + .slider::before {
   font-weight: 600;
 }
 
+/* =====================
+   CASE STUDIES HTML
+===================== */
+
+.case-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-top: 40px;
+}
+
+.case-header h1 {
+  font-size: 36px;
+}
+
+.case-project {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.case-overview {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.case-image {
+  background: #ccc;
+  border-radius: 12px;
+  height: 220px;
+}
+
+.case-image.large {
+  height: 300px;
+}
+
+.case-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.case-text-block {
+  /*! max-width: 700px; */
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.case-bottom-nav {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  padding: 8px 16px;
+  background: var(--bg-solid);
+  border: 1px solid var(--divider);
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.bottom-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.bottom-link.active {
+  background: var(--accent);
+  color: white;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-sep {
+  color: var(--text-secondary);
+}
+
+.breadcrumb-current {
+  color: var(--text-secondary);
+}
+
+.case-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Top image (fixed like index) */
+.case-image.fixed {
+  height: 320px;
+  overflow: hidden;
+}
+
+.case-image.fixed img {
+  height: 100%;
+  object-fit:  cover;
+}
+
+/* Flexible images (no forced crop) */
+.case-image.flexible {
+  height: auto;
+}
+
+.case-image.flexible img {
+  height: auto;
+  object-fit: contain;
+}
+
+.case-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.case-image img {
+  transition: transform 0.3s ease;
+}
+
+.case-project {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.case-overview {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--divider);
+  background: rgba(255,255,255,0.02);
+}
+
+.case-project > div {
+  margin-bottom: 32px;
+}
+
+#viewer {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  /* THE BLUEPRINT GRID */
+  background-color: #f8f9fa; 
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 40px 40px; /* Size of the grid squares */
+}
+
+/* Apply padding to children EXCEPT the full-bleed images */
+#viewer > :not(.case-images) {
+  /* Using 100% here is the key - it ignores the scrollbar */
+  padding-left: calc(max(24px, (100% - 1100px + 48px) / 2));
+  padding-right: calc(max(24px, (100% - 1100px + 48px) / 2));
+  box-sizing: border-box;
+}
+
+#viewer > .case-images {
+  width: 100%;
+  padding: 0;
+}
