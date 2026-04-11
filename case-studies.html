@@ -8,21 +8,22 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body data-theme="light">
 
-  <!-- NAV (same as index, simplified) -->
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
 
-      <a href="index.html" class="logo">Home</a>
-
-      <nav class="nav-links">
-        <a href="#" class="active">Projects</a>
-      </nav>
+      <div class="breadcrumb">
+        <a href="index.html" class="logo">Shreyas Tripathy</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Projects</span>
+      </div>
 
       <label class="theme-switch">
         <input type="checkbox" id="theme-toggle">
@@ -37,7 +38,7 @@
   <!-- CONTENT -->
   <main class="case-container container">
 
-    <!-- PAGE HEADER -->
+    <!-- HEADER -->
     <section class="case-header">
       <h1>Projects & Case Studies</h1>
     </section>
@@ -51,66 +52,212 @@
       <h2>Document Viewer</h2>
       <p class="project-meta">Enterprise • BIM • Large-scale workflows</p>
 
-      <!-- ===== SET 1 ===== -->
+      <!-- =====================
+           INTRO
+      ===================== -->
 
       <div class="case-overview">
-        <div class="case-image"></div>
+        <div class="case-image fixed">
+          <img src="assets/images/viewer.png">
+        </div>
 
         <div class="case-text">
-          <h3>Overview</h3>
+          <h3>Intro</h3>
           <p>
-            Designing a multi-dimensional viewer that integrates 2D drawings, models,
-            and reality capture into a unified workflow.
+            Designed a unified <b>Document Viewer</b> to support large-scale construction workflows across drawings, models, and reality capture.
+          </p>
+          <p>
+            The goal was to move from fragmented tools to a <b>single, context-aware workspace</b> where users could review, compare, and collaborate without leaving the document.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-text-block">
+        <p>
+          This work sits at the intersection of <b>document management, BIM, and workflow systems</b>, where scale, coordination, and clarity are critical to project success.
+        </p>
+      </div>
+
+      <!-- =====================
+           PROBLEM
+      ===================== -->
+
+      <div class="case-overview">
+        <div class="case-image flexible">
+          <img src="assets/images/user-flow.png">
+        </div>
+
+        <div class="case-text">
+          <h3>Problem</h3>
+          <p>
+            Enterprise users were managing reviews across multiple disconnected tools, leading to constant context switching and reduced visibility.
+          </p>
+          <p>
+            Reviewing a document wasn’t a single task—it involved navigating between viewers, workflows, comments, and external coordination tools.
           </p>
         </div>
       </div>
 
       <div class="case-images">
-        <div class="case-image large"></div>
-        <div class="case-image large"></div>
+        <div class="case-image flexible">
+          <img src="assets/images/user-flow.png">
+        </div>
+        <div class="case-image flexible">
+          <img src="assets/images/exploration.png">
+        </div>
       </div>
 
       <div class="case-text-block">
-        <p>
-          The challenge was handling scale while maintaining clarity across document relationships,
-          versioning, and review workflows.
-        </p>
+        <ul>
+          <li>Review workflows were split across viewer, issues, and workflow modules</li>
+          <li>No clear distinction between <b>viewing vs acting</b>, increasing error rates</li>
+          <li>Collaboration lacked context</li>
+          <li>Comparing documents required manual navigation</li>
+        </ul>
       </div>
 
-      <!-- ===== SET 2 ===== -->
+      <!-- =====================
+           SYSTEM
+      ===================== -->
 
       <div class="case-overview">
-        <div class="case-image"></div>
+        <div class="case-image flexible">
+          <img src="assets/images/feature-architecture.png">
+        </div>
 
         <div class="case-text">
-          <h3>Research</h3>
+          <h3>System Thinking</h3>
           <p>
-            Conducted usability testing and workflow analysis across enterprise users
-            to identify bottlenecks in document navigation and collaboration.
+            The solution required a <b>system-level restructuring</b> of how documents, workflows, and collaboration layers interact.
+          </p>
+          <p>
+            Instead of treating these as separate modules, the viewer became the <b>central interaction surface</b>.
           </p>
         </div>
       </div>
 
       <div class="case-images">
-        <div class="case-image large"></div>
-        <div class="case-image large"></div>
+        <div class="case-image flexible">
+          <img src="assets/images/feature-architecture.png">
+        </div>
+        <div class="case-image flexible">
+          <img src="assets/images/exploration.png">
+        </div>
       </div>
 
       <div class="case-text-block">
-        <p>
-          Insights revealed fragmentation between tools and lack of context while reviewing documents.
-        </p>
+        <ul>
+          <li>Documents act as the <b>anchor for all actions</b></li>
+          <li>Workflows and collaboration are embedded</li>
+          <li>Users move across 2D, 3D, and reality seamlessly</li>
+          <li>Designed for scale across large datasets and stakeholders</li>
+        </ul>
+      </div>
+
+      <!-- =====================
+           DECISIONS
+      ===================== -->
+
+      <div class="case-overview">
+        <div class="case-image flexible">
+          <img src="assets/images/viewer.png">
+        </div>
+
+        <div class="case-text">
+          <h3>Key Decisions</h3>
+          <p>
+            Several structural decisions shaped the experience, balancing usability, scale, and system constraints.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-images">
+        <div class="case-image flexible">
+          <img src="assets/images/viewer.png">
+        </div>
+        <div class="case-image flexible">
+          <img src="assets/images/audit.png">
+        </div>
+      </div>
+
+      <div class="case-text-block">
+        <p><b>Interaction Modes</b> → separated viewing vs editing → reduced errors</p>
+        <p><b>Contextual Panels</b> → preserved document context → reduced navigation</p>
+        <p><b>Unified Viewer</b> → eliminated tool switching → increased system complexity</p>
+        <p><b>In-context Collaboration</b> → improved visibility → required structured permissions</p>
+      </div>
+
+      <!-- =====================
+           SOLUTION
+      ===================== -->
+
+      <div class="case-overview">
+        <div class="case-image flexible">
+          <img src="assets/images/viewer.png">
+        </div>
+
+        <div class="case-text">
+          <h3>Solution</h3>
+          <p>
+            A <b>multi-dimensional viewer</b> combining navigation, review, and collaboration into a single workspace.
+          </p>
+          <p>
+            Users move between viewing, comparing, and acting without losing context.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-images">
+        <div class="case-image flexible">
+          <img src="assets/images/viewer.png">
+        </div>
+        <div class="case-image flexible">
+          <img src="assets/images/flyout.png">
+        </div>
+      </div>
+
+      <div class="case-text-block">
+        <ul>
+          <li>Layered viewing across document types</li>
+          <li>Integrated comparison and navigation</li>
+          <li>Context-aware tools</li>
+          <li>Embedded workflows and communication</li>
+        </ul>
+      </div>
+
+      <!-- =====================
+           IMPACT
+      ===================== -->
+
+      <div class="case-overview">
+        <div class="case-image flexible">
+          <img src="assets/images/table-view.png">
+        </div>
+
+        <div class="case-text">
+          <h3>Impact</h3>
+          <p>
+            Simplified complex workflows and improved clarity across large-scale document ecosystems.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-text-block">
+        <ul>
+          <li>Reduced context switching</li>
+          <li>Faster review cycles</li>
+          <li>Improved collaboration visibility</li>
+          <li>Foundation for AI and automation</li>
+        </ul>
       </div>
 
     </section>
 
   </main>
 
-  <!-- FLOATING BOTTOM NAV -->
+  <!-- FLOATING NAV -->
   <div class="case-bottom-nav">
     <a href="#viewer" class="bottom-link active">Viewer</a>
-    <a href="#search" class="bottom-link">Search</a>
-    <a href="#workflow" class="bottom-link">Workflow</a>
   </div>
 
   <script src="script.js"></script>
