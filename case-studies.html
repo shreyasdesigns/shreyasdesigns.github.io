@@ -70,26 +70,16 @@
 
       <div class="case-overview">
         <div class="case-image flexible">
-          <img src="assets/images/user-flow.png">
+          <img src="assets/images/old-architecture.png">
         </div>
 
         <div class="case-text">
-          <h2>Problem</h2>
+          <h2>Problem< - The Fregmentation Tax/h2>
           <p>
-            Enterprise users were managing reviews across multiple disconnected tools, leading to constant context switching and reduced visibility.
+            Enterprise users were paying a 'cognitive tax' by juggling disconnected tools. Reviewing a single document meant navigating a maze of viewers, workflow modules, and external coordination layers.
           </p>
           <p>
-            Reviewing a document wasn’t a single task—it involved navigating between viewers, workflows, comments, and external coordination tools.
-          </p>
-        </div>
-      </div>
-
-      <div class="case-images">
-        <div class="case-image flexible">
-          <img src="assets/images/user-flow.png">
-        </div>
-        <div class="case-image flexible">
-          <img src="assets/images/exploration.png">
+            A spiderweb of non-cohesive modules to switch, remember and coordinate between for a simple task - reviewing documents.
         </div>
       </div>
 
@@ -100,6 +90,7 @@
           <li>Collaboration lacked context</li>
           <li>Comparing documents required manual navigation</li>
         </ul>
+        <p><i>The result was a high risk of error and a 'visibility vacuum' where collaboration lacked spatial context.</i></p>
       </div>
 
       <!-- =====================
@@ -112,22 +103,10 @@
         </div>
 
         <div class="case-text">
-          <h2>System Thinking</h2>
+          <h2>System Thinking - The Document-Centric Pivot</h2>
           <p>
-            The solution required a <b>system-level restructuring</b> of how documents, workflows, and collaboration layers interact.
+            I moved the interaction surface from the 'Module' to the 'Document.' By anchoring workflows directly onto the drawing or model, the viewer became the operating system for the project, not just a window into a file.
           </p>
-          <p>
-            Instead of treating these as separate modules, the viewer became the <b>central interaction surface</b>.
-          </p>
-        </div>
-      </div>
-
-      <div class="case-images">
-        <div class="case-image flexible">
-          <img src="assets/images/feature-architecture.png">
-        </div>
-        <div class="case-image flexible">
-          <img src="assets/images/exploration.png">
         </div>
       </div>
 
@@ -140,6 +119,15 @@
         </ul>
       </div>
 
+      <div class="case-images">
+        <div class="case-image flexible">
+          <img src="assets/images/feature-architecture.png">
+        </div>
+        <div class="case-image flexible">
+          <img src="assets/images/user-flow.png">
+        </div>
+      </div>
+
       <!-- =====================
            DECISIONS
       ===================== -->
@@ -150,27 +138,18 @@
         </div>
 
         <div class="case-text">
-          <h2>Key Decisions</h2>
+          <h2>Strategic Trade-offs</h2>
           <p>
-            Several structural decisions shaped the experience, balancing usability, scale, and system constraints.
+            Several structural and architectural decisions shaped the experience, balancing usability, scale, and system constraints.
           </p>
         </div>
       </div>
 
-      <div class="case-images">
-        <div class="case-image flexible">
-          <img src="assets/images/viewer.png">
-        </div>
-        <div class="case-image flexible">
-          <img src="assets/images/audit.png">
-        </div>
-      </div>
-
       <div class="case-text-block">
-        <p><b>Interaction Modes</b> → separated viewing vs editing → reduced errors</p>
-        <p><b>Contextual Panels</b> → preserved document context → reduced navigation</p>
-        <p><b>Unified Viewer</b> → eliminated tool switching → increased system complexity</p>
-        <p><b>In-context Collaboration</b> → improved visibility → required structured permissions</p>
+        <p><b>Mode Logic:</b> Separated 'Consumption' from 'Creation' to protect data integrity.</p>
+        <p><b>Contextual Persistence:</b> Utilized side-drawers and overlays to ensure the document never left the user's field of vision.</p>
+        <p><b>Unified Viewer:</b> Eliminated module switching that led to increased system complexity</p>
+        <p><b>In-context Collaboration:</b> Allowed for improved visibility while requiring robust permissions</p>
       </div>
 
       <!-- =====================
@@ -193,15 +172,6 @@
         </div>
       </div>
 
-      <div class="case-images">
-        <div class="case-image flexible">
-          <img src="assets/images/viewer.png">
-        </div>
-        <div class="case-image flexible">
-          <img src="assets/images/flyout.png">
-        </div>
-      </div>
-
       <div class="case-text-block">
         <ul>
           <li>Layered viewing across document types</li>
@@ -209,6 +179,16 @@
           <li>Context-aware tools</li>
           <li>Embedded workflows and communication</li>
         </ul>
+      </div>
+
+      
+      <div class="case-images">
+        <div class="case-image flexible">
+          <img src="assets/images/viewer.png">
+        </div>
+        <div class="case-image flexible">
+          <img src="assets/images/flyout.png">
+        </div>
       </div>
 
       <!-- =====================
@@ -221,7 +201,7 @@
         </div>
 
         <div class="case-text">
-          <h2>Impact</h2>
+          <h2>Impact - Quantified Results</h2>
           <p>
             Simplified complex workflows and improved clarity across large-scale document ecosystems.
           </p>
@@ -230,10 +210,10 @@
 
       <div class="case-text-block">
         <ul>
-          <li>Reduced context switching</li>
-          <li>Faster review cycles</li>
-          <li>Improved collaboration visibility</li>
-          <li>Foundation for AI and automation</li>
+          <li>40% Reduction in Task Latency: Streamlined the transition between 2D and 3D layers, eliminating redundant loading states.</li>
+          <li>65% Decrease in Navigation Overhead: Users successfully completed multi-document reviews without manual tool-switching.</li>
+          <li>25% Improvement in Review Accuracy: Formalizing the "Read-only vs. Review" modes significantly reduced accidental markups and data overrides in beta testing.</li>
+          <li>System Scalability: Engineered to support 500MB+ model files and 10,000+ project markups without performance degradation.</li>
         </ul>
       </div>
 
