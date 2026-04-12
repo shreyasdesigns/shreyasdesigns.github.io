@@ -289,7 +289,7 @@ h3 {
   background: var(--tab-track);
 }
 
-.project-image :hover {
+.project-image:hover {
   filter: blur(4px);
   transition: filter ease-in-out 0.25s;
   display: flex;
@@ -756,12 +756,12 @@ input:checked + .slider::before {
   transform: translateX(-50%);
   display: flex;
   gap: 16px;
-  padding: 8px 16px;
-  background: var(--bg-solid);
-  border: 1px solid var(--divider);
-  border-radius: 999px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px);
+  padding: 8px 8px;
+  background: color-mix(in srgb, var(--bg-solid), transparent 20%);
+  border: 1px solid color-mix(in srgb, var(--divider), transparent 50%);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
   z-index: 100;
 }
 
@@ -770,7 +770,7 @@ input:checked + .slider::before {
   color: var(--text-secondary);
   font-size: 14px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: 12px;
   transition: all 0.2s ease;
 }
 
@@ -927,13 +927,6 @@ input:checked + .slider::before {
   gap: 80px;
 }
 
-.case-overview {
-  padding: 24px;
-  border-radius: 16px;
-  border: 1px solid var(--divider);
-  background: rgba(255,255,255,0.02);
-}
-
 .case-project > div {
   margin-bottom: 32px;
 }
@@ -947,14 +940,44 @@ input:checked + .slider::before {
   margin-right: -50vw;
   
   /* BLUEPRINT GRID */
-  background-color: #ffffff;
   background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
-/* Apply padding to children EXCEPT the full-bleed images */
+#viewer::before {
+  content: "";
+  position: absolute;
+  
+  top: -40px; 
+  left: 0;
+  right: 0;
+  height: 80px; 
+  background: linear-gradient(
+    to bottom,
+    var(--bg-solid), 
+    transparent
+  );
+  
+  z-index: 1; 
+  pointer-events: none;
+}
+
+#viewer::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    to top,
+    var(--bg-solid),
+    transparent
+  );
+  pointer-events: none;
+}
+
 #viewer > :not(.case-images) {
-  /* Using 100% here is the key - it ignores the scrollbar */
   padding-left: calc(max(24px, (100% - 1100px + 48px) / 2));
   padding-right: calc(max(24px, (100% - 1100px + 48px) / 2));
   box-sizing: border-box;
