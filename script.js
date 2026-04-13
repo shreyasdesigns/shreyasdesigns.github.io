@@ -55,14 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tabs = card.querySelectorAll(".tab");
     const textEl = card.querySelector(".project-text");
-    const imageEl = card.querySelector(".project-image img");
     const track = card.querySelector(".project-tabs");
 
-    if (!tabs.length || !textEl || !imageEl || !track) return;
+    if (!tabs.length || !textEl || !track) return;
 
     track.style.setProperty("--tab-count", tabs.length);
 
-    // ✅ INITIAL LOAD (fixes overview not loading)
+    // INITIAL LOAD
     const defaultTab = card.querySelector(".tab.active");
     if (defaultTab) {
       const defaultKey = defaultTab.dataset.tab;
@@ -70,11 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (defaultContent) {
         textEl.innerHTML = defaultContent.text;
-        imageEl.src = defaultContent.image;
       }
     }
 
-    // ✅ INITIAL INDICATOR POSITION
+    // INDICATOR POSITION
     const activeIndex = [...tabs].findIndex(t => t.classList.contains("active"));
     track.style.setProperty("--translateX", `calc(${activeIndex} * 100%)`);
 
@@ -88,46 +86,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = data[key];
         if (!content) return;
 
-        // ✅ HTML rendering fix
         textEl.innerHTML = content.text;
-        imageEl.src = content.image;
 
-        track.style.setProperty(
-          "--translateX", `calc(${index} * 100%)`);
+        track.style.setProperty("--translateX", `calc(${index} * 100%)`);
       });
     });
 
   });
 
   /* =====================
-     APPROACH TABS
+     APPROACH TABS (TEXT ONLY)
   ===================== */
 
   document.querySelectorAll(".approach").forEach(section => {
 
     const data = {
       workshops: {
-        text: "I facilitate cross-functional workshops to bridge the gap between business requirements and technical feasibility. It’s not about sticky notes; it’s about extracting tribal knowledge and building a shared definition of success before a single pixel is moved"
+        text: "I facilitate cross-functional workshops to bridge the gap between business requirements and technical feasibility. It’s not about sticky notes; it’s about extracting tribal knowledge and building a shared definition of success before a single pixel is moved."
       },
       flows: {
-        text: "I map complex logic to ensure the system remains resilient under pressure. I focus heavily on 'the unhappy path'—handling errors, permissions, and high-density data states that typical flows ignore, ensuring a predictable experience at scale."
+        text: "I map complex logic to ensure the system remains resilient under pressure. I focus heavily on 'the unhappy path'—handling errors, permissions, and high-density data states that typical flows ignore."
       },
       journeys: {
-        text: "I look beyond the screen to the entire service ecosystem. By mapping the 'front-of-house' user actions against 'back-of-house' technical processes, I identify operational bottlenecks and opportunities for automation that a standard UI audit would miss."
+        text: "I look beyond the screen to the entire service ecosystem. By mapping front-of-house actions against back-of-house processes, I identify operational bottlenecks and automation opportunities."
       },
       architecture: {
-        text: "I design scalable data structures, not just menus. I focus on how objects relate to one another in a system—ensuring that as the product grows from 10 features to 100, the mental model remains intuitive and the navigation stays lean."
+        text: "I design scalable data structures, not just menus. I focus on relationships between objects so the system remains intuitive as it scales."
       },
       testing: {
-        text: "I move past 'likability' to measure 'efficacy.' I lead longitudinal studies and rapid prototyping cycles to validate core hypotheses, using qualitative insights to de-risk high-stakes product decisions before they hit engineering."
+        text: "I move beyond likability to measure efficacy. I validate hypotheses through rapid prototyping and longitudinal testing to de-risk product decisions."
       }
     };
 
     const tabs = section.querySelectorAll(".tab");
     const textEl = section.querySelector(".approach-text");
-    const imageEl = section.querySelector(".approach-visual img");
 
-    if (!tabs.length || !textEl || !imageEl) return;
+    if (!tabs.length || !textEl) return;
 
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
@@ -139,24 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = data[key];
 
         textEl.innerHTML = content.text;
-        // IMAGE TRANSITION
-        imageEl.classList.add("fade-out");
-        
-        setTimeout(() => {
-          const img = new Image();
-          img.src = content.image;
-          
-          img.onload = () => {
-            imageEl.src = content.image;
-        
-            imageEl.classList.remove("fade-out");
-            imageEl.classList.add("fade-in");
-        
-            setTimeout(() => {
-              imageEl.classList.remove("fade-in");
-            }, 250);
-          };
-        }, 150);
       });
     });
 
@@ -236,7 +212,7 @@ window.addEventListener("scroll", () => {
 });
 
 /* =====================
-   IMAGE PREVIEW
+   IMAGE PREVIEW (SAFE)
 ===================== */
 
 const preview = document.querySelector(".image-preview");
@@ -244,6 +220,8 @@ const previewImg = preview?.querySelector("img");
 
 document.querySelectorAll(".project-image img").forEach(img => {
   img.addEventListener("click", () => {
+    if (!preview || !previewImg) return;
+
     previewImg.src = img.src;
     preview.classList.add("active");
   });
