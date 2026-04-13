@@ -779,6 +779,73 @@ input:checked + .slider::before {
   color: #666;
 }
 
+
+/* =====================
+   FOOTER
+===================== */
+
+.main-footer {
+  background-color: var(--divider); /* Slightly darker than body */
+  opacity: 0.9; /* Softens it further */
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+/* Specific adjustment for dark mode to ensure it's not TOO dark */
+[data-theme="dark"] .main-footer {
+  background-color: #161616; 
+  border-top: 1px solid var(--divider);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: var(--font-subhead);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+}
+
+.footer-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive fix */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
 /* =====================
    CASE STUDIES CLEANED
 ===================== */
