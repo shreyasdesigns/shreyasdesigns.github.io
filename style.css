@@ -784,6 +784,70 @@ input:checked + .slider::before {
 }
 
 /* =====================
+   WORKFLOW SECTION STYLES
+===================== */
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.workflow-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--bg-solid);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  min-height: 280px;
+  /* Hover Restoration */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.workflow-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(106, 80, 255, 0.2);
+}
+
+.workflow-icon {
+  height: 64px;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.workflow-icon img, 
+.workflow-icon svg {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Theme Switching */
+.dark-mode-only { display: none !important; }
+[data-theme="dark"] .light-mode-only { display: none !important; }
+[data-theme="dark"] .dark-mode-only { display: block !important; }
+
+/* Figma Combo alignment */
+.figma-combo { gap: 20px; }
+.figma-combo svg { height: 48px; }
+.figma-combo img { height: 32px; }
+
+/* Mobile */
+@media (max-width: 850px) {
+  .workflow-grid { grid-template-columns: 1fr; }
+  .workflow-card { flex-direction: row; text-align: left; padding: 24px; min-height: auto; }
+  .workflow-icon { width: 100px; margin-bottom: 0; justify-content: flex-start; }
+}
+
+/* =====================
    CONTACT
 ===================== */
 
