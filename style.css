@@ -544,6 +544,24 @@ h3 {
   color: var(--text-secondary);
 }
 
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 16px 0;
+}
+
+.exp-tags span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  background: var(--toggle-track);
+  color: var(--text-secondary);
+  border-radius: 4px;
+}
+
 /* Right Side */
 .company {
   font-size: 14px;
@@ -556,20 +574,6 @@ h3 {
   color: var(--text-secondary);
   line-height: 1.6;
 }
-
-/* Hidden Section */
-.hidden {
-  display: none;
-}
-
-.timeline-toggle {
-  margin-top: 16px;
-}
-
-
-/* =====================
-   CERTIFICATIONS
-===================== */
 
 /* =====================
    CERTIFICATIONS / EXPERTISE 
@@ -665,7 +669,7 @@ h3 {
 
 .slider {
   position: relative;
-  background: var(--toggle-track);
+  background: var(--divider);
   border-radius: 24px;
   width: 44px;
   height: 24px;
@@ -878,9 +882,9 @@ input:checked + .slider::before {
 }
 
 .copy-box:hover {
-  background: #fff;
+  background: var(--divider);
   border-color: #000;
-  box-shadow: 4px 4px 0px rgba(0,0,0,0.05); /* Architectural shadow */
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
 }
 
 .copy-box .value {
