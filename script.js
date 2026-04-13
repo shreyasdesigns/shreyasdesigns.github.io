@@ -107,24 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const data = {
       workshops: {
-        text: "Facilitating workshops to align stakeholders and define problems.",
-        image: "https://via.placeholder.com/600x400?text=Workshops"
+        text: "I facilitate cross-functional workshops to bridge the gap between business requirements and technical feasibility. It’s not about sticky notes; it’s about extracting tribal knowledge and building a shared definition of success before a single pixel is moved"
       },
       flows: {
-        text: "Mapping user flows to structure interactions and identify gaps.",
-        image: "https://via.placeholder.com/600x400?text=Flows"
+        text: "I map complex logic to ensure the system remains resilient under pressure. I focus heavily on 'the unhappy path'—handling errors, permissions, and high-density data states that typical flows ignore, ensuring a predictable experience at scale."
       },
       journeys: {
-        text: "Understanding end-to-end user journeys across touchpoints.",
-        image: "https://via.placeholder.com/600x400?text=Journeys"
+        text: "I look beyond the screen to the entire service ecosystem. By mapping the 'front-of-house' user actions against 'back-of-house' technical processes, I identify operational bottlenecks and opportunities for automation that a standard UI audit would miss."
       },
       architecture: {
-        text: "Breaking down features into scalable systems and capabilities.",
-        image: "https://via.placeholder.com/600x400?text=Architecture"
+        text: "I design scalable data structures, not just menus. I focus on how objects relate to one another in a system—ensuring that as the product grows from 10 features to 100, the mental model remains intuitive and the navigation stays lean."
       },
       testing: {
-        text: "Validating designs through usability testing and iteration.",
-        image: "https://via.placeholder.com/600x400?text=Testing"
+        text: "I move past 'likability' to measure 'efficacy.' I lead longitudinal studies and rapid prototyping cycles to validate core hypotheses, using qualitative insights to de-risk high-stakes product decisions before they hit engineering."
       }
     };
 
