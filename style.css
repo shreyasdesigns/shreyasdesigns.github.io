@@ -780,7 +780,7 @@ input:checked + .slider::before {
 }
 
 /* =====================
-   CASE STUDIES HTML
+   CASE STUDIES CLEANED
 ===================== */
 
 .case-container {
@@ -792,29 +792,50 @@ input:checked + .slider::before {
 
 .case-header h1 {
   font-size: 36px;
+  text-wrap: balance; /* Added our magic wrap */
 }
 
+/* Base Project Layout */
 .case-project {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 80px; /* Using the larger gap for better breathing room */
+}
+
+.case-project > div {
+  margin-bottom: 32px;
 }
 
 .case-overview {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
-  align-items: center;
+  align-items: start; /* 'Start' is better for variable text lengths */
 }
 
+/* Images & Media */
 .case-image {
   background: #ccc;
   border-radius: 12px;
   height: 220px;
+  overflow: hidden;
 }
 
-.case-image.large {
-  height: 300px;
+.case-image.large { height: 300px; }
+.case-image.fixed { height: 320px; }
+.case-image.flexible { height: auto; }
+
+.case-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.case-image.fixed img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .case-images {
@@ -826,93 +847,10 @@ input:checked + .slider::before {
 .case-text-block {
   color: var(--text-secondary);
   line-height: 1.6;
+  text-wrap: pretty; /* Added our magic wrap */
 }
 
-.case-bottom-nav {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 16px;
-  padding: 8px 8px;
-  background: color-mix(in srgb, var(--bg-solid), transparent 20%);
-  border: 1px solid color-mix(in srgb, var(--divider), transparent 50%);
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.1);
-  backdrop-filter: blur(4px);
-  z-index: 100;
-}
-
-.bottom-link {
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 12px;
-  transition: all 0.2s ease;
-}
-
-.bottom-link.active {
-  background: var(--accent);
-  color: white;
-}
-
-.nav-links a.active {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* =====================
-   CASE STUDIES HTML
-===================== */
-
-.case-container {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  padding-top: 40px;
-}
-
-.case-header h1 {
-  font-size: 36px;
-}
-
-.case-project {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-}
-
-.case-overview {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.case-image {
-  background: #ccc;
-  border-radius: 12px;
-  height: 220px;
-}
-
-.case-image.large {
-  height: 300px;
-}
-
-.case-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.case-text-block {
-  /*! max-width: 700px; */
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
+/* Floating Navigation */
 .case-bottom-nav {
   position: fixed;
   bottom: 24px;
@@ -923,7 +861,7 @@ input:checked + .slider::before {
   padding: 8px 16px;
   background: var(--bg-solid);
   border: 1px solid var(--divider);
-  border-radius: 999px;
+  border-radius: 999px; /* Pill shape is more modern */
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   backdrop-filter: blur(10px);
   z-index: 100;
@@ -938,78 +876,18 @@ input:checked + .slider::before {
   transition: all 0.2s ease;
 }
 
-.bottom-link.active {
+.bottom-link.active,
+.nav-links a.active {
   background: var(--accent);
   color: white;
-}
-
-.nav-links a.active {
-  color: var(--accent);
   font-weight: 600;
 }
 
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+/* Breadcrumbs */
+.breadcrumb { display: flex; align-items: center; gap: 8px; }
+.breadcrumb-sep, .breadcrumb-current { color: var(--text-secondary); }
 
-.breadcrumb-sep {
-  color: var(--text-secondary);
-}
-
-.breadcrumb-current {
-  color: var(--text-secondary);
-}
-
-.case-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-
-/* Top image (fixed like index) */
-.case-image.fixed {
-  height: 320px;
-  overflow: hidden;
-}
-
-.case-image.fixed img {
-  height: 100%;
-  object-fit:  cover;
-}
-
-/* Flexible images (no forced crop) */
-.case-image.flexible {
-  height: auto;
-}
-
-.case-image.flexible img {
-  height: auto;
-  object-fit: contain;
-}
-
-.case-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.case-image img {
-  transition: transform 0.3s ease;
-}
-
-.case-project {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.case-project > div {
-  margin-bottom: 32px;
-}
-
+/* The Blueprint Section */
 #viewer {
   width: 100vw;
   position: relative;
@@ -1017,52 +895,32 @@ input:checked + .slider::before {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  
-  /* BLUEPRINT GRID */
   background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
-#viewer::before {
+#viewer::before, #viewer::after {
   content: "";
   position: absolute;
-  
-  top: -40px; 
-  left: 0;
-  right: 0;
-  height: 80px; 
-  background: linear-gradient(
-    to bottom,
-    var(--bg-solid), 
-    transparent
-  );
-  
-  z-index: 1; 
-  pointer-events: none;
-}
-
-#viewer::after {
-  content: "";
-  position: absolute;
-  bottom: -40px;
   left: 0;
   right: 0;
   height: 80px;
-  background: linear-gradient(
-    to top,
-    var(--bg-solid),
-    transparent
-  );
   pointer-events: none;
+  z-index: 1;
+}
+
+#viewer::before {
+  top: -40px;
+  background: linear-gradient(to bottom, var(--bg-solid), transparent);
+}
+
+#viewer::after {
+  bottom: -40px;
+  background: linear-gradient(to top, var(--bg-solid), transparent);
 }
 
 #viewer > :not(.case-images) {
   padding-left: calc(max(24px, (100% - 1100px + 48px) / 2));
   padding-right: calc(max(24px, (100% - 1100px + 48px) / 2));
   box-sizing: border-box;
-}
-
-#viewer > .case-images {
-  width: 100%;
-  padding: 0;
 }
