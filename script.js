@@ -95,47 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================
-     APPROACH TABS (TEXT ONLY)
+     APPROACH ACCORDION
   ===================== */
 
-  document.querySelectorAll(".approach").forEach(section => {
-
-    const data = {
-      workshops: {
-        text: "I facilitate cross-functional workshops to bridge the gap between business requirements and technical feasibility. It’s not about sticky notes; it’s about extracting tribal knowledge and building a shared definition of success before a single pixel is moved."
-      },
-      flows: {
-        text: "I map complex logic to ensure the system remains resilient under pressure. I focus heavily on 'the unhappy path'—handling errors, permissions, and high-density data states that typical flows ignore."
-      },
-      journeys: {
-        text: "I look beyond the screen to the entire service ecosystem. By mapping front-of-house actions against back-of-house processes, I identify operational bottlenecks and automation opportunities."
-      },
-      architecture: {
-        text: "I design scalable data structures, not just menus. I focus on relationships between objects so the system remains intuitive as it scales."
-      },
-      testing: {
-        text: "I move beyond likability to measure efficacy. I validate hypotheses through rapid prototyping and longitudinal testing to de-risk product decisions."
-      }
-    };
-
-    const tabs = section.querySelectorAll(".tab");
-    const textEl = section.querySelector(".approach-text");
-
-    if (!tabs.length || !textEl) return;
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-
-        const key = tab.dataset.tab;
-        const content = data[key];
-
-        textEl.innerHTML = content.text;
-      });
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.parentElement.classList.toggle('active');
     });
-
   });
 
 
