@@ -43,6 +43,14 @@
   --accent-hover: #9A86FF;
 }
 
+[data-theme="dark"] .cert-item {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .cert-icon {
+  background: rgba(130, 110, 255, 0.1);
+}
+
 [data-theme="dark"] .project-card {
   background: rgba(255, 255, 255, 0.04);
 }
@@ -563,22 +571,73 @@ h3 {
    CERTIFICATIONS
 ===================== */
 
-.certifications {
-  min-height: auto;
-}
+/* =====================
+   CERTIFICATIONS / EXPERTISE 
+   ===================== */
 
-.cert-row {
-  display: flex;
+.cert-grid {
+  display: grid;
+  /* Adjusts from 1 to 3 columns based on screen size */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
   gap: 24px;
-  overflow-x: auto;
+  margin-top: 40px;
 }
 
-.cert {
-  padding: 16px 24px;
+.cert-item {
+  display: flex;
+  align-items: flex-start; /* Better for variable text lengths */
+  gap: 20px;
+  padding: 24px;
+  background: var(--bg-solid);
   border: 1px solid var(--divider);
   border-radius: 8px;
-  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.cert-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.cert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: color-mix(in srgb, var(--accent), transparent 92%); /* Subtle tint */
+  border-radius: 12px;
+  color: var(--accent);
+  flex-shrink: 0; /* Prevents icon from squishing */
+}
+
+.cert-icon i {
+  width: 24px;
+  height: 24px;
+}
+
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-title {
+  font-family: var(--font-subhead);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.cert-issuer {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 
 /* =====================
    THEME TOGGLE
@@ -785,13 +844,12 @@ input:checked + .slider::before {
 ===================== */
 
 .main-footer {
-  background-color: var(--divider); /* Slightly darker than body */
-  opacity: 0.9; /* Softens it further */
+  background-color: var(--toggle-track);
+  opacity: 0.9;
   padding: 40px 0;
   margin-top: 80px;
 }
 
-/* Specific adjustment for dark mode to ensure it's not TOO dark */
 [data-theme="dark"] .main-footer {
   background-color: #161616; 
   border-top: 1px solid var(--divider);
