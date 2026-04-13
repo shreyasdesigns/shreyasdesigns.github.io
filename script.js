@@ -138,26 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  /* =====================
-     EXPERIENCE
-  ===================== */
-
-  const toggleBtn = document.querySelector(".timeline-toggle");
-  const moreSection = document.querySelector(".timeline-more");
-
-  if (toggleBtn && moreSection) {
-    toggleBtn.addEventListener("click", () => {
-      const isHidden = moreSection.classList.contains("hidden");
-
-      if (isHidden) {
-        moreSection.classList.remove("hidden");
-        toggleBtn.textContent = "Show less ↑";
-      } else {
-        moreSection.classList.add("hidden");
-        toggleBtn.textContent = "Show more ↓";
-      }
-    });
-  }
 
   /* =====================
      NAV UNDERLINE
