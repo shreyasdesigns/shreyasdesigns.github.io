@@ -71,7 +71,7 @@ body, p, li {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.65;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-secondary);
   -webkit-font-smoothing: antialiased;
 }
@@ -491,8 +491,7 @@ h3 {
 }
 
 .approach-body {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  display: flex;
   gap: 40px;
   align-items: center;
 }
@@ -501,6 +500,7 @@ h3 {
   font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.6;
+  text-wrap: balance;
 }
 
 .approach-visual img {
