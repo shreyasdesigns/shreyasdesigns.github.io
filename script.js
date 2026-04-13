@@ -230,3 +230,27 @@ document.querySelectorAll(".project-image img").forEach(img => {
 preview?.addEventListener("click", () => {
   preview.classList.remove("active");
 });
+
+function copyText(text, element) {
+  navigator.clipboard.writeText(text).then(() => {
+    // 1. Add success class for styling
+    element.classList.add('copied');
+    
+    // 2. Find the icon inside the clicked box
+    const icon = element.querySelector('[data-lucide]');
+    
+    // 3. Swap to 'check'
+    icon.setAttribute('data-lucide', 'check');
+    lucide.createIcons(); // Re-render to show the checkmark
+
+    // 4. Reset back to 'copy' after 2 seconds
+    setTimeout(() => {
+      element.classList.remove('copied');
+      icon.setAttribute('data-lucide', 'copy');
+      lucide.createIcons(); // Re-render to show the copy icon again
+    }, 2000);
+  });
+}
+
+// Initial run to render icons on page load
+lucide.createIcons();
