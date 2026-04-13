@@ -482,38 +482,97 @@ h3 {
    DESIGN APPROACH
 ===================== */
 
-.approach-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-  background: var(--tab-track);
-  padding: 4px;
-  border-radius: 8px;
+/* =====================
+   DESIGN APPROACH (ACCORDION)
+===================== */
+
+.approach-accordion {
+  margin-top: 40px;
+  border-top: 1px solid var(--divider);
 }
 
-.approach-tabs .tab.active {
-  background: var(--accent);
-  color: white;
-  border-radius: 6px;
+.accordion-item {
+  border-bottom: 1px solid var(--divider);
+  background: transparent;
+  transition: background 0.3s ease;
 }
 
-.approach-body {
+.accordion-header {
+  padding: 24px 0;
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 
-.approach-text {
-  font-size: 16px;
+.accordion-title {
+  font-family: var(--font-subhead);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.accordion-icon {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--divider);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-secondary);
+}
+
+/* The Grid Animation Trick */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content-inner {
+  overflow: hidden;
+}
+
+.accordion-content p {
+  padding-bottom: 24px;
   color: var(--text-secondary);
   line-height: 1.6;
-  text-wrap: balance;
+  max-width: 800px;
 }
 
-.approach-visual img {
-  width: 100%;
-  border-radius: 8px;
+/* ACTIVE STATE */
+.accordion-item.active {
+  background: rgba(106, 80, 255, 0.02); /* Very subtle tint when open */
+}
+
+.accordion-item.active .accordion-title {
+  color: var(--accent);
+}
+
+.accordion-item.active .accordion-icon {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(45deg); /* Rotates + to look like X/minus */
+}
+
+.accordion-item.active .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .accordion-title {
+    font-size: 1.1rem;
+    padding-right: 16px;
+  }
+  
+  .accordion-header {
+    padding: 20px 0;
+  }
 }
 
 
