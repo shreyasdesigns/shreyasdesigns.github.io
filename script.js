@@ -39,59 +39,80 @@ document.addEventListener("DOMContentLoaded", () => {
   updateIcon(savedTheme);
 
   /* =====================
-     PROJECT TABS
+      PROJECT TABS
   ===================== */
-
+  
   document.querySelectorAll(".project-card").forEach(card => {
-
-    let data;
-
-    try {
-      data = JSON.parse(card.dataset.project);
-    } catch (e) {
-      console.error("Invalid JSON in project-card", e);
-      return;
-    }
-
-    const tabs = card.querySelectorAll(".tab");
-    const textEl = card.querySelector(".project-text");
-    const track = card.querySelector(".project-tabs");
-
-    if (!tabs.length || !textEl || !track) return;
-
-    track.style.setProperty("--tab-count", tabs.length);
-
-    // INITIAL LOAD
-    const defaultTab = card.querySelector(".tab.active");
-    if (defaultTab) {
-      const defaultKey = defaultTab.dataset.tab;
-      const defaultContent = data[defaultKey];
-
-      if (defaultContent) {
-        textEl.innerHTML = defaultContent.text;
+  
+      let data;
+  
+      try {
+        data = JSON.parse(card.dataset.project);
+      } catch (e) {
+        console.error("Invalid JSON in project-card", e);
+        return;
       }
-    }
+  
+      const tabs = card.querySelectorAll(".tab");
+      const textEl = card.querySelector(".project-text");
+      const imgEl = card.querySelector(".project-image img"); // Target the image
+      const track = card.querySelector(".project-tabs");
 
-    // INDICATOR POSITION
-    const activeIndex = [...tabs].findIndex(t => t.classList.contains("active"));
-    track.style.setProperty("--translateX", `calc(${activeIndex} * 100%)`);
-
-    tabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => {
-
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-
-        const key = tab.dataset.tab;
-        const content = data[key];
-        if (!content) return;
-
-        textEl.innerHTML = content.text;
-
-        track.style.setProperty("--translateX", `calc(${index} * 100%)`);
+      // Function to handle smooth image swap
+      const updateImageSmoothly = (img, newSrc) => {
+        if (!img || img.src.includes(newSrc)) return;
+      
+        img.classList.add("fade-out");
+        setTimeout(() => {
+          img.src = newSrc;
+          img.onload = () => {
+            img.classList.remove("fade-out");
+          };
+        }, 300);
+      };
+    
+      if (!tabs.length || !textEl || !track) return;
+  
+      track.style.setProperty("--tab-count", tabs.length);
+  
+      // INITIAL LOAD
+      const defaultTab = card.querySelector(".tab.active");
+      if (defaultTab) {
+        const defaultKey = defaultTab.dataset.tab;
+        const defaultContent = data[defaultKey];
+  
+        if (defaultContent) {
+          textEl.innerHTML = defaultContent.text;
+          if (imgEl && defaultContent.image) { // Update initial image
+              imgEl.src = defaultContent.image;
+          }
+        }
+      }
+  
+      // INDICATOR POSITION
+      const activeIndex = [...tabs].findIndex(t => t.classList.contains("active"));
+      track.style.setProperty("--translateX", `calc(${activeIndex} * 100%)`);
+  
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+  
+          tabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+  
+          const key = tab.dataset.tab;
+          const content = data[key];
+          if (!content) return;
+  
+          // Update Text
+          textEl.innerHTML = content.text;
+          
+          // Update Image Source
+          updateImageSmoothly(imgEl, content.image);
+  
+          track.style.setProperty("--translateX", `calc(${index} * 100%)`);
+        });
       });
-    });
-
+  
   });
 
   /* =====================
