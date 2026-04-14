@@ -219,5 +219,52 @@ function copyText(text, element) {
   });
 }
 
+/* =====================
+    METRIC COUNTER
+===================== */
+const runCounter = (el) => {
+  const target = parseInt(el.getAttribute('data-target'));
+  
+  // Find the text node that contains the digits
+  // We use a filter to ignore empty whitespace nodes
+  const textNode = Array.from(el.childNodes).find(node => 
+    node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== ""
+  );
+  
+  // Set the starting number
+  let current = 0;
+  
+  // Use a unique ID or flag to prevent duplicate runs
+  if (el.getAttribute('data-counting') === 'true') return;
+  el.setAttribute('data-counting', 'true');
+
+  const timer = setInterval(() => {
+    current += Math.ceil(target / 40);
+    
+    if (current >= target) {
+      textNode.textContent = target; // Ensure only the target number is displayed
+      clearInterval(timer);
+    } else {
+      textNode.textContent = current;
+    }
+  }, 40);
+};
+
+// Intersection Observer for performance
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const numbers = entry.target.querySelectorAll('.metric-number');
+      numbers.forEach(num => {
+        if (!num.getAttribute('data-counting')) runCounter(num);
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+const section = document.querySelector('.project-metrics');
+if (section) observer.observe(section);
+
 // Initial run to render icons on page load
 lucide.createIcons();
