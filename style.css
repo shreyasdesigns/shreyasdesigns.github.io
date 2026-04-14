@@ -1197,6 +1197,6 @@ input:checked + .slider::before {
 
   .workflow-grid { grid-template-columns: 1fr; }
   .workflow-card { padding: 24px; min-height: auto; }
-  .workflow-icon { width: 64px; margin-bottom: 0; justify-content: center; }
+  .workflow-icon { margin-bottom: 0; justify-content: center; }
 
 }
