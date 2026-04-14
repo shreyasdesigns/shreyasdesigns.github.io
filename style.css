@@ -522,13 +522,8 @@ h3 {
   color: var(--accent);
 }
 
-
 /* =====================
    DESIGN APPROACH
-===================== */
-
-/* =====================
-   DESIGN APPROACH (ACCORDION)
 ===================== */
 
 .approach-accordion {
@@ -539,7 +534,6 @@ h3 {
 .accordion-item {
   border-bottom: 1px solid var(--divider);
   background: transparent;
-  transition: background 0.3s ease;
 }
 
 .accordion-header {
@@ -559,51 +553,17 @@ h3 {
   transition: color 0.3s ease;
 }
 
-.accordion-icon {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--divider);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--text-secondary);
-}
-/* Base style for both icons to stack them */
-.accordion-icon i {
-  position: absolute; 
-  width: 16px;
-  height: 16px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* CLOSED STATE (Default) */
-.plus-icon {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-.minus-icon {
-  opacity: 0;
-  transform: rotate(-90deg); /* Start rotated so it "spins" in */
-}
-
-/* OPEN STATE (.active) */
 .accordion-item.active .plus-icon {
-  opacity: 0;
-  transform: rotate(90deg); /* Spins out */
+  display: none;
 }
-
 .accordion-item.active .minus-icon {
-  opacity: 1;
-  transform: rotate(0deg); /* Spins in to horizontal */
+  display: flex;
 }
-
-.accordion-item.active .accordion-icon {
-  border-color: var(--accent);
-  color: var(--accent);
+.accordion-item .minus-icon {
+  display: none;
+}
+.accordion-item .plus-icon {
+  display: flex;
 }
 
 /* The Grid Animation Trick */
@@ -621,12 +581,7 @@ h3 {
   padding-bottom: 24px;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 800px;
-}
-
-/* ACTIVE STATE */
-.accordion-item.active {
-  background: rgba(106, 80, 255, 0.02); /* Very subtle tint when open */
+  max-width: 960px;
 }
 
 .accordion-item.active .accordion-title {
@@ -634,9 +589,7 @@ h3 {
 }
 
 .accordion-item.active .accordion-icon {
-  border-color: var(--accent);
   color: var(--accent);
-  transform: rotate(45deg); /* Rotates + to look like X/minus */
 }
 
 .accordion-item.active .accordion-content {
