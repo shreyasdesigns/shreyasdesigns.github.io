@@ -1193,7 +1193,7 @@ input:checked + .slider::before {
     margin-bottom: 8px;
   }
 
-  .workflow-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr; }
 
   .workflow-grid { grid-template-columns: 1fr; }
   .workflow-card { padding: 24px; min-height: auto; }
