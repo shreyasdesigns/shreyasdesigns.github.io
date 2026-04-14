@@ -515,6 +515,7 @@ h3 {
 }
 
 .accordion-icon {
+  position: relative;
   width: 32px;
   height: 32px;
   border: 1px solid var(--divider);
@@ -524,6 +525,40 @@ h3 {
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--text-secondary);
+}
+/* Base style for both icons to stack them */
+.accordion-icon i {
+  position: absolute; 
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* CLOSED STATE (Default) */
+.plus-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.minus-icon {
+  opacity: 0;
+  transform: rotate(-90deg); /* Start rotated so it "spins" in */
+}
+
+/* OPEN STATE (.active) */
+.accordion-item.active .plus-icon {
+  opacity: 0;
+  transform: rotate(90deg); /* Spins out */
+}
+
+.accordion-item.active .minus-icon {
+  opacity: 1;
+  transform: rotate(0deg); /* Spins in to horizontal */
+}
+
+.accordion-item.active .accordion-icon {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* The Grid Animation Trick */
