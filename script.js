@@ -38,82 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateIcon(savedTheme);
 
-  /* =====================
-      PROJECT TABS
-  ===================== */
-  
-  document.querySelectorAll(".project-card").forEach(card => {
-  
-      let data;
-  
-      try {
-        data = JSON.parse(card.dataset.project);
-      } catch (e) {
-        console.error("Invalid JSON in project-card", e);
-        return;
-      }
-  
-      const tabs = card.querySelectorAll(".tab");
-      const textEl = card.querySelector(".project-text");
-      const imgEl = card.querySelector(".project-image img"); // Target the image
-      const track = card.querySelector(".project-tabs");
-
-      // Function to handle smooth image swap
-      const updateImageSmoothly = (img, newSrc) => {
-        if (!img || img.src.includes(newSrc)) return;
-      
-        img.classList.add("fade-out");
-        setTimeout(() => {
-          img.src = newSrc;
-          img.onload = () => {
-            img.classList.remove("fade-out");
-          };
-        }, 300);
-      };
-    
-      if (!tabs.length || !textEl || !track) return;
-  
-      track.style.setProperty("--tab-count", tabs.length);
-  
-      // INITIAL LOAD
-      const defaultTab = card.querySelector(".tab.active");
-      if (defaultTab) {
-        const defaultKey = defaultTab.dataset.tab;
-        const defaultContent = data[defaultKey];
-  
-        if (defaultContent) {
-          textEl.innerHTML = defaultContent.text;
-          if (imgEl && defaultContent.image) { // Update initial image
-              imgEl.src = defaultContent.image;
-          }
-        }
-      }
-  
-      // INDICATOR POSITION
-      const activeIndex = [...tabs].findIndex(t => t.classList.contains("active"));
-      track.style.setProperty("--translateX", `calc(${activeIndex} * 100%)`);
-  
-      tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => {
-  
-          tabs.forEach(t => t.classList.remove("active"));
-          tab.classList.add("active");
-  
-          const key = tab.dataset.tab;
-          const content = data[key];
-          if (!content) return;
-  
-          // Update Text
-          textEl.innerHTML = content.text;
-          
-          // Update Image Source
-          updateImageSmoothly(imgEl, content.image);
-  
-          track.style.setProperty("--translateX", `calc(${index} * 100%)`);
-        });
-      });
-  
-  });
 
   /* =====================
      APPROACH ACCORDION
@@ -151,6 +75,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+  /* =====================
+     MOBILE NAV
+  ===================== */
+
+  const toggle = document.querySelector('.nav-toggle');
+  const close = document.querySelector('.nav-close');
+  const overlay = document.querySelector('.nav-overlay');
+  const links = document.querySelectorAll('.overlay-menu a');
+  
+  const toggleMenu = () => {
+    overlay.classList.toggle('is-open');
+  };
+  
+  toggle.addEventListener('click', toggleMenu);
+  close.addEventListener('click', toggleMenu);
+  
+  // Close when a link is clicked
+  links.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
 /* =====================
    BOTTOM NAV ACTIVE STATE
 ===================== */
@@ -179,49 +124,9 @@ window.addEventListener("scroll", () => {
 });
 
 /* =====================
-   IMAGE PREVIEW (SAFE)
-===================== */
-
-const preview = document.querySelector(".image-preview");
-const previewImg = preview?.querySelector("img");
-
-document.querySelectorAll(".project-image img").forEach(img => {
-  img.addEventListener("click", () => {
-    if (!preview || !previewImg) return;
-
-    previewImg.src = img.src;
-    preview.classList.add("active");
-  });
-});
-
-preview?.addEventListener("click", () => {
-  preview.classList.remove("active");
-});
-
-function copyText(text, element) {
-  navigator.clipboard.writeText(text).then(() => {
-    // 1. Add success class for styling
-    element.classList.add('copied');
-    
-    // 2. Find the icon inside the clicked box
-    const icon = element.querySelector('[data-lucide]');
-    
-    // 3. Swap to 'check'
-    icon.setAttribute('data-lucide', 'check');
-    lucide.createIcons(); // Re-render to show the checkmark
-
-    // 4. Reset back to 'copy' after 2 seconds
-    setTimeout(() => {
-      element.classList.remove('copied');
-      icon.setAttribute('data-lucide', 'copy');
-      lucide.createIcons(); // Re-render to show the copy icon again
-    }, 2000);
-  });
-}
-
-/* =====================
     METRIC COUNTER
 ===================== */
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. PROJECT TABS LOGIC
