@@ -16,16 +16,23 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#" class="logo">Shreyas Tripathy</a>
-
-      <nav class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#system">Design Approach</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a href="index.html" class="logo">Shreyas Tripathy</a>
+      
+      <button class="nav-toggle" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </header>
+  
+  <div class="nav-overlay">
+    <button class="nav-close"><i data-lucide="x"></i></button>
+    <nav class="overlay-menu">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#system">Design Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
   
   <!-- HERO -->
   <section class="hero">
@@ -416,7 +423,7 @@
           <i data-lucide="mail"></i>
           <span>Email</span>
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="footer-link">
+        <a href="https://linkedin.com/in/yourprofile" target="https://www.linkedin.com/in/shreyas-tripathy-534011a4" class="footer-link">
           <i data-lucide="external-link"></i>
           <span>LinkedIn</span>
         </a>
@@ -429,10 +436,6 @@
       </div>
     </div>
   </footer>
-  
-  <div class="image-preview">
-    <img src="" alt="">
-  </div>
   
   <script src="script.js"></script>
 </body>
