@@ -169,6 +169,15 @@ p {
   color: var(--text-primary);
 }
 
+.nav-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
 /* =====================
    LOGO / HOME LINK
 ===================== */
