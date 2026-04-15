@@ -207,22 +207,6 @@ h3 {
   margin-bottom: 32px;
 }
 
-.project-header h3 {
-  display: contents;
-  font-size: 6em;
-  font-family: var(--font-header);
-  color: var(--text-secondary);
-}
-
-.project-header h3 > span {
-  opacity: 0.2;
-  position: absolute;
-  top: 133%;
-  left: 50%;
-  line-height: 1.2;
-  z-index: -1;
-}
-
 .project-meta-tags {
   display: flex;
   flex-wrap: wrap;
@@ -326,9 +310,59 @@ h3 {
   }
 }
 
+.step-solution .step-image { background-image: url('assets/images/feature-architecture-transparent.png'); }
+.step-impact .step-image { 
+  background-image: url('assets/images/collab-chat.png');
+  animation: featureHighlight 15s infinite ease-in-out;
+}
 
-.step-solution .step-image { background-image: url('assets/images/viewer-solution.png'); }
-.step-impact .step-image { background-image: url('assets/images/viewer-impact.png'); }
+@keyframes featureHighlight {
+  0%, 4% {
+    background-size: 100%;
+    background-position: 0% 0%;
+  }
+  
+  8%, 15% {
+    background-size: 300%;
+    background-position: 33% 0%;
+  }
+
+  19%, 31% {
+    background-size: 250%;
+    background-position: 0% 23%;
+  }
+
+  36%, 47% {
+    background-size: 450%;
+    background-position: 0% 100%;
+  }
+  
+  52%, 63% {
+    background-size: 280%;
+    background-position: 50% 85%;
+  }
+  
+  68%, 79% {
+    background-size: 190%;
+    background-position: 100% 100%;
+  }
+
+  83%, 93% {
+    background-size: 350%;
+    background-position: 100% 0%;
+  }
+  
+  95%, 99% {
+    background-size: 350%;
+    background-position: 100% 0%;
+  }
+  
+  99%, 100% {
+    background-size: 100%;
+    background-position: 0% 0%;
+  }
+}
+
 
 /* =====================
    METRICS CARD (QUADRANTS)
@@ -1164,7 +1198,6 @@ input:checked + .slider::before {
   .workflow-grid { grid-template-columns: 1fr; }
   .workflow-card { padding: 24px; min-height: auto; }
   .workflow-icon { margin-bottom: 0; justify-content: center; }
-
 }
 
 /* =====================
