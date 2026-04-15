@@ -49,99 +49,75 @@
     <span class="sub-label">Detailed Breakdown</span>
     <h2>Selected Work</h2>
   
-    <div class="project-card" data-project='{
-      "overview": {
-        "text": "Designed a unified Document Viewer for enterprise construction workflows, enabling users to review, compare, and collaborate across 2D drawings, 3D models, and reality capture.<br><br>Replaced fragmented tools with a single, context-aware workspace that supports both <b>passive viewing and active review.</b>",
-        "image": "assets/images/viewer.png"
-      },
-      "problem": {
-        "text": "<ul><li>Review workflows were split across multiple tools (viewer, issues, workflows)</li><li>Users had to constantly switch context to compare versions or act on feedback</li><li>No clear separation between viewing vs editing, leading to errors</li><li>Collaboration (comments, chats, audit trail) lived outside the document</li></ul>",
-        "image": "assets/images/user-flow.png"
-      },
-      "system": {
-        "text": "<ul><li>Unified viewer supporting <b>2D, 3D, and reality capture layers</b></li><li>Introduced interaction modes (view vs review) to reduce cognitive load</li><li>Integrated observations, comments, and workflows directly into context</li><li>Enabled comparison across versions, contexts, and related documents</li><li>Designed for scale: large files, multiple stakeholders, permission layers</li></ul>",
-        "image": "assets/images/feature-architecture.png"
-      },
-      "impact": {
-        "text": "<ul><li>Reduced context switching across tools and workflows</li><li>Faster review cycles with actions embedded in the document</li><li>Improved collaboration visibility through in-context communication</li><li>Created a scalable foundation for future capabilities (AI assist, automation)</li></ul>",
-        "image": "assets/images/table-view.png"
-      }
-    }'>
-  
+    <div class="project-card">
       <div class="project-header">
-        <h3>Document Viewer</h3>
-        <p class="project-meta">Enterprise • Construction • Large-scale workflows • Documents • Oracle Aconex</p>
-      </div>
-  
-      <div class="project-image">
-        <img src="assets/images/viewer.png">
-      </div>
-  
-      <div class="project-content">
-        <div class="project-tabs">
-          <a class="tab active" data-tab="overview">Overview</a>
-          <a class="tab" data-tab="problem">Problem</a>
-          <a class="tab" data-tab="system">System</a>
-          <a class="tab" data-tab="impact">Impact</a>
-        </div>
-  
-        <div class="project-text">
-          Designed a unified Document Viewer for enterprise construction workflows, enabling users to review, compare, and collaborate across 2D drawings, 3D models, and reality capture.<br><br>
-          Replaced fragmented tools with a single, context-aware workspace that supports both <b>passive viewing and active review.</b>
+        <h3><span>Document Viewer</span></h3>
+        <div class="project-meta-tags">
+          <span>Enterprise</span>
+          <span>Construction</span>
+          <span>Large-scale workflows</span>
+          <span>Documents</span>
+          <span>Oracle Aconex</span>
         </div>
       </div>
-
-      <div class="project-metrics">
-        <div class="metric-item">
-          <div class="metric-number" data-target="40">
-            <i data-lucide="arrow-down" class="metric-icon down"></i>40
-          </div>
-          <div class="metric-label">
-            <strong>Reduction in Task Latency</strong>
-            <span>Streamlined 2D/3D transitions, eliminating redundant loading.</span>
-          </div>
-        </div>
-      
-        <div class="metric-item">
-          <div class="metric-number" data-target="65">
-            <i data-lucide="arrow-down" class="metric-icon down"></i>65
-          </div>
-          <div class="metric-label">
-            <strong>Decrease in Navigation Overhead</strong>
-            <span>Completed reviews without manual tool-switching.</span>
+    
+      <div class="project-steps-container">
+        
+        <div class="project-step step-overview">
+          <div class="step-image"></div>
+          <div class="step-content">
+            <h4>Overview</h4>
+            <p>A unified document viewing experience engineered for the world's largest construction projects. Handling complex 2D drawings and 3D models with zero latency.</p>
           </div>
         </div>
-      
-        <div class="metric-item">
-          <div class="metric-number" data-target="25">
-            <i data-lucide="arrow-up" class="metric-icon up"></i>25
-          </div>
-          <div class="metric-label">
-            <strong>Improvement in Review Accuracy</strong>
-            <span>New interaction modes reduced accidental markups.</span>
+    
+        <div class="project-step step-problem">
+          <div class="step-image"></div>
+          <div class="step-content">
+            <h4>Problem</h4>
+            <p>Users struggled with fragmented workflows, switching between multiple tools to review markups, leading to data loss and significant navigation overhead.</p>
           </div>
         </div>
-      
-        <div class="metric-item">
-          <div class="metric-number" data-target="10000">
-            <i data-lucide="arrow-up" class="metric-icon up"></i>10000
+    
+        <div class="project-step step-solution">
+          <div class="step-image"></div>
+          <div class="step-content">
+            <h4>Solution</h4>
+            <p>Integrated a high-performance rendering engine with a centralized markup system, allowing for seamless transitions between document types and real-time collaboration.</p>
           </div>
-          <div class="metric-label">
-            <strong>System Scalability</strong>
-            <span>Engineered for 500MB+ models & 10k+ project markups.</span>
+        </div>
+    
+        <div class="project-step step-impact">
+          <div class="step-image"></div>
+          <div class="step-content">
+            <h4>Impact</h4>
+            <p>Delivered a robust system capable of handling 500MB+ models, resulting in a quantifiable reduction in task completion time across the Oracle Aconex ecosystem.</p>
+          </div>
+        </div>
+    
+        <div class="project-step metrics-card">
+          <div class="metric-quadrant">
+            <div class="metric-number" data-target="40"><i data-lucide="arrow-down" class="metric-icon down"></i>40</div>
+            <div class="metric-label">Reduction in Task Latency</div>
+          </div>
+          <div class="metric-quadrant">
+            <div class="metric-number" data-target="65"><i data-lucide="arrow-down" class="metric-icon down"></i>65</div>
+            <div class="metric-label">Decrease in Navigation</div>
+          </div>
+          <div class="metric-quadrant">
+            <div class="metric-number" data-target="25"><i data-lucide="arrow-up" class="metric-icon up"></i>25</div>
+            <div class="metric-label">Improvement in Accuracy</div>
+          </div>
+          <div class="metric-quadrant">
+            <div class="metric-number" data-target="10000"><i data-lucide="arrow-up" class="metric-icon up"></i>10000</div>
+            <div class="metric-label">Markups Support in 500MB+ Drawings</div>
           </div>
         </div>
       </div>
-      
-      <!-- FOOTER -->
+    
       <div class="project-footer">
-  
-        <p>For more details about this project, and others, click there →</p>
-  
-        <a href="case-studies.html#viewer" class="btn btn-secondary">Open Projects</a>
-  
+        <a href="case-studies.html#viewer" class="btn btn-secondary">Read Full Case Study</a>
       </div>
-  
     </div>
   </section>
 
