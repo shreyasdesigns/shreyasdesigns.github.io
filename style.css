@@ -136,14 +136,18 @@ p {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  
+  /* Start hidden and off-screen */
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s ease;
+  transform: translateY(-10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-overlay.is-open {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .nav-close {
@@ -153,20 +157,26 @@ p {
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--text-primary);
 }
 
 .overlay-menu {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   text-align: center;
 }
 
 .overlay-menu a {
   font-family: var(--font-header);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 8vw, 3.5rem);
   text-decoration: none;
   color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.overlay-menu a:hover {
+  color: var(--accent);
 }
 
 .nav-toggle {
@@ -175,7 +185,6 @@ p {
 
 .nav-links {
   display: flex;
-  gap: 24px;
 }
 
 /* =====================
@@ -1256,7 +1265,14 @@ input:checked + .slider::before {
 
 @media (max-width: 800px) {
   .nav-links { display: none; }
-  .nav-toggle { display: block; background: none; border: none; cursor: pointer; }
+  .nav-toggle { 
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 8px;
+  }
 }
 
 /* =====================
