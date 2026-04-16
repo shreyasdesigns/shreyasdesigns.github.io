@@ -514,7 +514,7 @@ h3 {
   background-image: url('assets/images/collab-chat.png');
   background-size: 90%;
   background-position: center 100%;
-	mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
   height: 600px;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -1175,77 +1175,6 @@ input:checked + .slider::before {
   }
 }
 
-/* =====================
-   CASE STUDIES CLEANED
-===================== */
-
-.case-container {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  padding-top: 40px;
-}
-
-.case-header h1 {
-  font-size: 36px;
-  text-wrap: balance; /* Added our magic wrap */
-}
-
-/* Base Project Layout */
-.case-project {
-  display: flex;
-  flex-direction: column;
-  gap: 80px; /* Using the larger gap for better breathing room */
-}
-
-.case-project > div {
-  margin-bottom: 32px;
-}
-
-.case-overview {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: start; /* 'Start' is better for variable text lengths */
-}
-
-/* Images & Media */
-.case-image {
-  background: #ccc;
-  border-radius: 12px;
-  height: 220px;
-  overflow: hidden;
-}
-
-.case-image.large { height: 300px; }
-.case-image.fixed { height: 320px; }
-.case-image.flexible { height: auto; }
-
-.case-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.case-image.fixed img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.case-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.case-text-block {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  text-wrap: pretty; /* Added our magic wrap */
-}
-
 /* Floating Navigation */
 .case-bottom-nav {
   position: fixed;
@@ -1287,22 +1216,8 @@ input:checked + .slider::before {
 #viewer {
   width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
   background-size: 30px 30px;
-}
-
-#viewer::before, #viewer::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 80px;
-  pointer-events: none;
-  z-index: 1;
 }
 
 #viewer::before {
@@ -1313,12 +1228,6 @@ input:checked + .slider::before {
 #viewer::after {
   bottom: -40px;
   background: linear-gradient(to top, var(--bg-solid), transparent);
-}
-
-#viewer > :not(.case-images) {
-  padding-left: calc(max(24px, (100% - 1100px + 48px) / 2));
-  padding-right: calc(max(24px, (100% - 1100px + 48px) / 2));
-  box-sizing: border-box;
 }
 
 /* ------------------------------------------------------------------------ */
