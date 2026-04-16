@@ -519,6 +519,60 @@ h3 {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
+.step-viewer-vision .step-image {
+  background-image: url('assets/images/exploration.png');
+  background-size: 90%;
+  background-position: center 100%;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  height: 600px;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+step-viewer-problem .step-image {
+  background-image: url('assets/images/old-architecture-transparent.png');
+  background-size: 90%;
+  background-position: center 100%;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  height: 600px;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+step-viewer-system .step-image {
+  background-image: url('assets/images/feature-architecture-transparent.png');
+  background-size: 90%;
+  background-position: center 100%;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  height: 600px;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+step-viewer-tradeoffs .step-image {
+  background-image: url('assets/images/user-flow.png');
+  background-size: 90%;
+  background-position: center 100%;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  height: 600px;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+step-viewer-solution .step-image {
+  background-image: url('assets/images/audit-trail.png');
+  background-size: 90%;
+  background-position: center 100%;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  height: 600px;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+step-viewer-impact .step-image {
+  background-image: url('assets/images/flyout-tool.png');
+  background-size: 90%;
+  background-position: center 100%;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  height: 600px;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
 /* =====================
    METRICS CARD (QUADRANTS)
    ===================== */
