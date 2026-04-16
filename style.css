@@ -528,7 +528,7 @@ h3 {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
-step-viewer-problem .step-image {
+.step-viewer-problem .step-image {
   background-image: url('assets/images/old-architecture-transparent.png');
   background-size: 90%;
   background-position: center 100%;
@@ -537,7 +537,7 @@ step-viewer-problem .step-image {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
-step-viewer-system .step-image {
+.step-viewer-system .step-image {
   background-image: url('assets/images/feature-architecture-transparent.png');
   background-size: 90%;
   background-position: center 100%;
@@ -546,7 +546,7 @@ step-viewer-system .step-image {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
-step-viewer-tradeoffs .step-image {
+.step-viewer-tradeoffs .step-image {
   background-image: url('assets/images/user-flow.png');
   background-size: 90%;
   background-position: center 100%;
@@ -555,7 +555,7 @@ step-viewer-tradeoffs .step-image {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
-step-viewer-solution .step-image {
+.step-viewer-solution .step-image {
   background-image: url('assets/images/audit-trail.png');
   background-size: 90%;
   background-position: center 100%;
@@ -564,7 +564,7 @@ step-viewer-solution .step-image {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
-step-viewer-impact .step-image {
+.step-viewer-impact .step-image {
   background-image: url('assets/images/flyout-tool.png');
   background-size: 90%;
   background-position: center 100%;
