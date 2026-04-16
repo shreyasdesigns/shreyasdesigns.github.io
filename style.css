@@ -378,7 +378,12 @@ h3 {
   }
 }
 
-.step-solution .step-image { background-image: url('assets/images/feature-architecture-transparent.png'); }
+.step-solution .step-image { 
+  background-image: url('assets/images/feature-architecture-transparent.png');
+  background-position: center;
+   background-size: 100%;
+}
+
 .step-impact .step-image { 
   background-image: url('assets/images/collab-chat.png');
   animation: featureHighlight 15s infinite ease-in-out;
