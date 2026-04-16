@@ -213,31 +213,58 @@ p {
 ===================== */
 
 .hero {
-  padding: 100px 0 80px;
-  min-height: 80vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 85vh;
+  padding: 100px 0;
 }
 
 .hero-inner {
-  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
-h1 {
-  font-size: 52px;
-  font-weight: 600;
+.hero-inner h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem); 
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
-.subtitle {
-  font-size: 22px;
+.hero-inner .subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin-bottom: 40px;
   color: var(--text-secondary);
+  text-wrap: balance;
 }
 
-.description {
-  margin-top: 16px;
-  font-size: 18px;
+.hero-inner span {
+  color: var(--text-primary);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  
+}
+
+/* Mobile: Stack and Center */
+@media (max-width: 680px) {
+  .hero-inner {
+    align-items: stretch; 
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+}
 /* =====================
    TYPOGRAPHY
 ===================== */
