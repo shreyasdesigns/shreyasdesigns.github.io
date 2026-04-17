@@ -18,14 +18,34 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-
       <div class="breadcrumb">
         <a href="index.html" class="logo">Shreyas Tripathy</a>
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">Projects</span>
       </div>
+
+      <nav class="nav-links">
+        <a href="#viewer">Document Viewer/a>
+        <a href="#spotify">Spotify</a>
+        <a href="#graph">Document Graph View</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      
+      <button class="nav-toggle" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </header>
+
+  <div class="nav-overlay">
+    <button class="nav-close"><i data-lucide="x"></i></button>
+    <nav class="overlay-menu">
+      <a href="#viewer">Document Viewer/a>
+        <a href="#spotify">Spotify</a>
+        <a href="#graph">Document Graph View</a>
+        <a href="#contact">Contact</a>
+    </nav>
+  </div>
   
   <section id="viewer" class="section container case-project">
     <span class="sub-label">The Complete Review Workflow</span>
@@ -45,9 +65,7 @@
     ===================== -->
 
     <div class="project-steps-container">
-      <div class="project-step step-viewer-main">
-        <div class="step-image"></div>
-      </div>
+      <div class="step-viewer-main step-image"></div>
 
       <!-- Vision -->
       <div class="project-step step-viewer-vision">
@@ -58,9 +76,7 @@
           </p>
         </div>
       </div>
-      <div class="project-step step-viewer-vision">
-        <div class="step-image"></div>
-      </div>
+      <div class="step-viewer-vision step-image"></div>
 
       <!-- Problem -->
       <div class="project-step step-viewer-problem">
@@ -79,9 +95,7 @@
           <p><i>The result was a high risk of error and a 'visibility vacuum' where collaboration lacked spatial context.</i></p>
         </div>
       </div>
-      <div class="project-step step-viewer-problem">
-        <div class="step-image"></div>
-      </div>
+      <div class="step-viewer-problem step-image"></div>
 
       <!-- System Thinking -->
       <div class="project-step step-viewer-system">
@@ -98,9 +112,7 @@
           </ul>
         </div>
       </div>
-      <div class="project-step step-viewer-system">
-        <div class="step-image"></div>
-      </div>
+      <div class="step-viewer-system step-image"></div>
 
       <!-- Tradeoffs -->
       <div class="project-step step-viewer-tradeoffs">
@@ -115,9 +127,7 @@
           <p><b>In-context Collaboration:</b> Allowed for improved visibility while requiring robust permissions</p>
         </div>
       </div>
-      <div class="project-step step-viewer-tradeoffs">
-        <div class="step-image"></div>
-      </div>
+      <div class="step-viewer-tradeoffs step-image"></div>
 
       <!-- Solution -->
       <div class="project-step step-viewer-solution">
@@ -135,9 +145,7 @@
           </ul>
         </div>
       </div>
-      <div class="project-step step-viewer-solution">
-        <div class="step-image"></div>
-      </div>
+      <div class="step-viewer-solution step-image"></div>
 
       <!-- Impact -->
       <div class="project-step step-viewer-impact">
@@ -165,13 +173,47 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="step-viewer-impact step-image"></div>
+  </div>
+
+  </section>
+
+  <section id="spotify" class="section container case-project">
+    <span class="sub-label">Manifesting Music Mindfully</span>
+    <h2>Spotify UX: A Case Study & Redesign (2024)</h2>
+    <h1>Coming Soon! Processing Screenshots as we speak... </h1>
+  </section>
+
+  <section id="graph" class="section container case-project">
+    <span class="sub-label">A Visual Document Register</span>
+    <h2>"Connected" Document Register</h2>
+    <h1>Coming Soon! Case study in progress...</h1>
+  </section>
+  
+  <!-- CONTACT -->
+  <section id="contact" class="section container portfolio-content">
+    <span class="sub-label">Like What you See?</span>
+    <h2>Let's build something monumental together</h2>
+    <p>Based in Bengaluru. Remotely available. Open to Lead / Staff and Principal roles. <br>Let’s talk systems, scale, or the future of AI-powered tech.</p>
+  
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="sub-label">Email</span>
+        <div class="copy-box" onclick="copyText('shreyastripathy@outlook.com', this)">
+          <span class="value">shreyastripathy@outlook.com</span>
+          <i data-lucide="copy" class="icon"></i>
         </div>
       </div>
-      <div class="project-step step-viewer-impact">
-        <div class="step-image"></div>
+  
+      <div class="contact-item">
+        <span class="sub-label">Phone</span>
+        <div class="copy-box" onclick="copyText('+1 555 012 3456', this)">
+          <span class="value">+91 9783633488</span>
+          <i data-lucide="copy" class="icon"></i>
+        </div>
       </div>
     </div>
-
   </section>
 
   <!-- FOOTER -->
