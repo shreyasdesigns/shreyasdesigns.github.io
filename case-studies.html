@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Studies</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&family=Cairo:wght@200..1000&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/icon-black.png" data-theme="light">
+  <link rel="icon" type="image/png" href="assets/images/icon-white.png" data-theme="dark">
+  <link rel="apple-touch-icon" href="assets/images/icon-black-apple.png" data-theme="light">
+  <link rel="apple-touch-icon" href="assets/images/icon-white-apple.png" data-theme="dark">
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Styles -->
@@ -19,7 +22,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <div class="breadcrumb">
-        <a href="index.html" class="logo">Shreyas Tripathy</a>
+        <a href="index.html" class="logo"><img src="assets/images/logo-black.svg" alt="Logo"> Shreyas Tripathy</a>
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">Projects</span>
       </div>
@@ -182,7 +185,176 @@
   <section id="spotify" class="section container case-project">
     <span class="sub-label">Manifesting Music Mindfully</span>
     <h2>Spotify UX: A Case Study & Redesign (2024)</h2>
-    <p>Coming Soon! Processing Screenshots as we speak... </p>
+
+    <div class="project-header">
+      <div class="project-meta-tags">
+        <span>B2C</span>
+        <span>Entertainment</span>
+        <span>Independent Case Study</span>
+      </div>
+    </div>
+
+    <div class="project-steps-container">
+      <div class="step-spotify-main step-image"></div>
+
+      <!-- Goal -->
+      <div class="project-step step-spotify-goal">
+        <div class="step-content">
+          <h4>Purpose and Goals</h4>
+          <p>
+            This case study evaluates the user experience (UX) and interface (UI) design of Spotify Premium across web, Windows, and macOS platforms. <br>
+            The objective is to identify critical friction points and structural inconsistencies that hinder user productivity and personalization, with the ultimate goal of proposing design solutions that better align the platform with actual user needs.
+          </p>
+        </div>
+      </div>
+      <div class="step-spotify-goal step-image"></div>
+
+      <!-- Requirement -->
+      <div class="project-step step-spotify-req">
+        <div class="step-content">
+          <h4>The Core User Requirements</h4>
+          <p>
+            The current iteration* of the Spotify desktop application prioritizes algorithmic discovery at the expense of user control and workflow efficiency. Based on my analysis, the core user requirements are:
+          </p>
+          <ul>
+            <li><b>Minimalist Focus:</b> An environment free from irrelevant distractions or forced suggestions.</li>
+            <li><b>System Consistency:</b> A predictable interface that maintains functional patterns across all screens.</li>
+            <li><b>Personalization:</b> Granular control over library management and visibility, moving from a passive "what you might like" model to an active "what I actually like" experience.</li>
+          </ul>
+          *<sub>Spotify.coincidentally, made some significant UX/UI changes after my case study went live on Behance. However, majority of the friction identified here can still be found on the latest version.</sub>
+        </div>
+      </div>
+      <div class="step-spotify-req step-image"></div>
+
+      <!-- Friction -->
+      <div class="project-step step-spotify-friction">
+        <div class="step-content">
+          <h4>Key UX Friction Points</h4>
+          <p>
+            Through a comprehensive audit of the interface, several systemic issues were identified:
+          </p>
+          <ol>
+            <li><b>Navigation and Information Architecture</b>
+              <ul>
+                <li>Inconsistent Hierarchy: The app lacks a clear page history, making navigation feel aimless. Back/forward buttons are often vague or non-functional.</li>
+                <li>Redundant/Confusing UI: Elements like the Homepage navigation and "Browse" buttons are placed in unconventional locations or exhibit overlapping, redundant behavior.</li>
+                <li>Overly Aggressive Search: The search function begins fetching results with the first keystroke, often returning wildly inaccurate suggestions. It lacks pre-filtering, forcing users to sift through irrelevant categories.</li>
+              </ul>
+            </li>
+            <li><b>Layout and Visual Consistency</b>
+              <ul>
+                <li>Component Fragmentation: Features behave differently depending on where they are opened (e.g., in a center panel versus a side panel), creating a disjointed user journey.</li>
+                <li>Library Management: The "Your Library" panel is overly restrictive. Resizing options are limited, and the transition from list to grid view is poorly implemented, failing to provide users with meaningful control over how they organize their collection.</li>
+                <li>Visual Noise: Song details and thumbnails lack proper padding and distinct layout logic, leading to a cluttered, overwhelming visual state.</li>
+              </ul>
+            </li>
+            <li><b>Action Logic and Feedback</b>
+              <ul>
+                <li>Ambiguous Icons: The use of checkmarks and plus icons is counter-intuitive. An icon may simultaneously represent "add to library," "liked," and "add to playlist," leading to redundant steps and a lack of clarity regarding the current state of an item.</li>
+                <li>Opaque Data: The "Now Playing" and artist pages fail to prioritize essential information like album titles or song credits, instead over-prioritizing the artist's general profile.</li>
+              </ul>
+            </li>
+          </ol>
+          *<sub>Spotify.coincidentally, made some significant UX/UI changes after my case study went live on Behance. However, majority of the friction identified here can still be found on the latest version.</sub>
+        </div>
+      </div>
+      <div class="step-spotify-friction step-image"></div>
+
+      <!-- Conclusion -->
+      <div class="project-step step-spotify-conclusion">
+        <div class="step-content">
+          <h4>Conclusion: Form Over Function</h4>
+          <p>
+            The overarching issue is that the application currently prioritizes form over function. Despite being a premium subscription service, the platform offers surprisingly little in the way of deep user customization.
+          </p>
+          <p>
+            The current design philosophy leans heavily into a reactive "what the user may like" model, which often clashes with the user's explicit intent to simply listen to and manage their personal library.<br>
+            To improve the user experience, Spotify must shift its focus toward providing a more consistent, coherent, and user-centric architecture that empowers the user to define their own experience.
+          </p>
+        </div>
+      </div>
+      <div class="step-spotify-conclusion step-image"></div>
+
+      <!-- Design -->
+      <div class="project-step step-spotify-design">
+        <div class="step-content">
+          <h4>Design Strategy & The Solution</h4>
+          <p>
+            My goal was to create a redesign that shifts the platform’s focus from a reactive "what you <i>may</i> like" model to an active "what I <b>actually</b> like" experience. <br>
+            Here are the specific design solutions applied to create a more consistent, coherent, and user-centric architecture.
+          </p>
+        </div>
+      </div>
+      <div class="step-spotify-design step-image"></div>
+
+      <!-- VD -->
+      <div class="project-step step-spotify-vd">
+        <div class="step-content">
+          <h4>Foundation & The Design System</h4>
+          <p> Some visual design nitty-gritty to start things off. The idea was to ensures coherence and efficient scaling. </p>
+          <ul>
+            <li>Structured Scaling: Smallest division set to 8 pts; default padding/margins defined at 96 | 48 pts.</li>
+            <li>Consistent Iconography: Icons scaled consistently (48 | 24 pts general, 54 | 32 pts for play controls).</li>
+            <li>Font System: Standardization of Circular Spotify Text (Light, Medium, Bold, Black) across four distinct sizes (36, 24, 16, 14 pts).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-spotify-vd step-image"></div>
+
+      <!-- Nav & Layout -->
+      <div class="project-step step-spotify-layout">
+        <div class="step-content">
+          <h4>Contextual Navigation & Layout</h4>
+          <p>
+            The overall application architecture was rationalized. The main hub is centered on the My Library panel, designed to feel powerful and personal. 
+            I created a modularized grid and list view for libraries, reducing restriction and granting meaningful scaling options. 
+            To combat navigation confusion, a persistent main hub now serves as the anchor, replacing vague, multi-panel behavior.
+          </p>
+        </div>
+      </div>
+      <div class="step-spotify-layout step-image"></div>
+
+      <!-- Player -->
+      <div class="project-step step-spotify-player">
+        <div class="step-content">
+          <h4>The "Focus-First" Player</h4>
+          <p> A central goal was reducing visual clutter while maximizing user control. The persistent play controls and 'Now Playing' view were unified. </p>
+          <ul>
+            <li>Clarity on Hover: Critical actions (About the artist, Share, Tour dates, etc.) are consolidated and accessed cleanly via an optimized context menu.</li>
+            <li>Dedicated Focus States: I created streamlined sub-views—like Connect to a device, Lyrics, and Add to Playlist—that load consistently in a side panel without shifting the entire layout. This reduces visual noise while keeping the user’s main focus intact.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-spotify-player step-image"></div>
+
+      <!-- Discover -->
+      <div class="project-step step-spotify-discover">
+        <div class="step-content">
+          <h4>Targeted Discovery & Reduced Search Noise</h4>
+          <p>I streamlined discovery entry points, and added sub-navigations, context-based searches.</p>
+          <ul>
+            <li>Discover Page: This dedicated view focuses on personalized and algorithmic recommendations ("Made For Shreyas"), freeing the library view of distraction.</li>
+            <li>Streamlined Search Results: The search function was optimized for accuracy. 
+              It provides immediate clarity by presenting results in a prioritized list and simplified interactions (play, contextual options).
+              I removed immediate algorithmic pre-filters, placing initial filtering control (category buttons like 'All', 'Songs', 'Artists') directly in the user’s hands.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-spotify-discover step-image"></div>
+
+      <!-- Design Conclusion -->
+      <div class="project-step step-spotify-redes">
+        <div class="step-content">
+          <h4>Final Conclusion: Function-First Spotify</h4>
+          <p>This redesign establishes that personalization is not just about what a user passively streams.
+            By prioritizing systematic consistency, functional clarity, and granular user control over algorithmic projection, this design creates a Spotify environment that is cohesive, respectful of user focus, and fundamentally function-first.</p>
+        </div>
+      </div>
+      <div class="step-spotify-redes step-image"></div>
+      
+    </div>
+    
+    <p>Coming Soon! Processing screenshots as we speak... </p>
   </section>
 
   <section id="graph" class="section container case-project">
@@ -220,7 +392,7 @@
   <footer class="main-footer">
     <div class="container footer-content">
       <div class="footer-left">
-        <p>© 2026 — Handcrafted by Shreyas. Assisted by LLMs</p>
+        <p>© 2026 — Handcrafted by <img src="assets/images/logo-black.svg"> Shreyas. Assisted by LLMs</p>
       </div>
       
       <div class="footer-right">
