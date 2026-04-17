@@ -387,7 +387,6 @@ h3 {
   border: 1px solid var(--divider);
   border-radius: 12px;
   overflow: hidden;
-  min-height: 400px;
   transition: transform 0.3s ease;
 }
 
@@ -428,6 +427,12 @@ h3 {
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-secondary);
+}
+
+.step-content li {
+  list-style-position: inside;
+  font-size: 1.2em;
+  line-height: 1.6;
 }
 
 /* Background Images - Assign your assets here */
