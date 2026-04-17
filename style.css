@@ -95,6 +95,7 @@ p {
   height: 24px;
   width: 24px;
   vertical-align: center;
+  color: var(--text-primary);
 }
 
 .nav-inner {
