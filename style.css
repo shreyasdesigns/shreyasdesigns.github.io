@@ -305,6 +305,21 @@ p {
     width: 100%;
     justify-content: center;
   }
+
+  .metrics-card {
+    grid-template-columns: 1fr; /* 4 in a row stack on mobile */
+    padding: 40px 20px;
+  }
+
+  .metric-quadrant {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 32px;
+  }
+
+  .metric-quadrant:last-child {
+    border-bottom: none;
+  }
 }
 
 /* =====================
@@ -512,64 +527,71 @@ h3 {
 
 .step-viewer-main.step-image {
   background-image: url('assets/images/collab-chat.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-size: 90%;
+  aspect-ratio: 288/162;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
 .step-viewer-vision.step-image {
   background-image: url('assets/images/exploration.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-size: 90%;
+  aspect-ratio: 647.2/585.6;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
 .step-viewer-problem.step-image {
-  background-image: url('assets/images/old-architecture-transparent.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-image: url('assets/images/old-architecture.png');
+  background-size: 90%;
+  aspect-ratio: 647.2/585.6;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
 .step-viewer-system.step-image {
   background-image: url('assets/images/feature-architecture-transparent.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-size: 90%;
+  aspect-ratio: 478.6/262.4;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
 .step-viewer-tradeoffs.step-image {
   background-image: url('assets/images/user-flow.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-size: 90%;
+  aspect-ratio: 300.8/585.6;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
 .step-viewer-solution.step-image {
   background-image: url('assets/images/audit-trail.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-size: 90%;
+  aspect-ratio: 288/162;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
 .step-viewer-impact.step-image {
   background-image: url('assets/images/flyout-tool.png');
-  background-size: 100%;
-  background-position: center 100%;
+  background-size: 90%;
+  aspect-ratio: 288/162;
+  background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
-  min-height: 600px;
+  min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
@@ -654,7 +676,7 @@ h3 {
   .step-image {
     width: 100%;
     flex: none;
-    height: 300px;
+    height: auto;
   }
 
   .metrics-card {
@@ -664,23 +686,6 @@ h3 {
 
   .metric-quadrant:nth-child(2) {
     border-right: none;
-  }
-}
-
-@media (max-width: 550px) {
-  .metrics-card {
-    grid-template-columns: 1fr; /* 4 in a row stack on mobile */
-    padding: 40px 20px;
-  }
-
-  .metric-quadrant {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 32px;
-  }
-
-  .metric-quadrant:last-child {
-    border-bottom: none;
   }
 }
 
