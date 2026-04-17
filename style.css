@@ -94,6 +94,7 @@ p {
 .nav img, .footer-left img {
   height: 24px;
   width: 24px;
+  vertical-align: center;
 }
 
 .nav-inner {
