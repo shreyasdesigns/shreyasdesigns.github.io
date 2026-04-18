@@ -610,6 +610,46 @@ h3 {
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
 
+.step-spotify-friction-1.step-image {
+  background-image: url('assets/images/spotify/discovery-1.png');
+  background-size: 90%;
+  aspect-ratio: 384/360.2;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+.step-spotify-friction-2.step-image {
+  background-image: url('assets/images/spotify/discovery-2.png');
+  background-size: 90%;
+  aspect-ratio: 384/296.4;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+.step-spotify-friction-3.step-image {
+  background-image: url('assets/images/spotify/discovery-search.png');
+  background-size: 90%;
+  aspect-ratio: 384/296.4;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+.step-spotify-conclusion.step-image {
+  background-image: url('assets/images/spotify/review-conclusion.png');
+  background-size: 90%;
+  aspect-ratio: 384/216.2;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
 /* =====================
    METRICS CARD (QUADRANTS)
    ===================== */
