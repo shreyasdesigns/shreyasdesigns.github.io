@@ -393,10 +393,16 @@ h3 {
   color: var(--text-secondary);
 }
 
+.step-content ul {
+  margin-top: 24px;
+}
+
 .step-content li {
   list-style-position: inside;
   font-size: 1.2em;
-  line-height: 1.6;
+  line-height: 2.4;
+  padding-left: 16px;
+  text-indent: -16px;
 }
 
 /* Background Images - Assign your assets here */
@@ -565,6 +571,38 @@ h3 {
   background-image: url('assets/images/flyout-tool.png');
   background-size: 90%;
   aspect-ratio: 288/162;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+/* Spotify Images */
+
+.step-spotify-main.step-image {
+  background-image: url('assets/images/spotify/Cover.png');
+  background-size: 90%;
+  aspect-ratio: 192/108;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+.step-spotify-goal.step-image {
+  background-image: url('assets/images/spotify/goal.png');
+  background-size: 90%;
+  aspect-ratio: 384/216.2;
+  background-position: center top;
+  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+  min-height: auto;
+  filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+.step-spotify-req.step-image {
+  background-image: url('assets/images/spotify/user-story.png');
+  background-size: 90%;
+  aspect-ratio: 384/216.2;
   background-position: center top;
   mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
   min-height: auto;
