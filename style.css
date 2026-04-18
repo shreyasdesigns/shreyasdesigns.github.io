@@ -400,7 +400,8 @@ h3 {
 .step-content li {
   list-style-position: inside;
   font-size: 1.2em;
-  line-height: 2.4;
+  line-height: 1.6;
+  padding-bottom: 16px;
   padding-left: 16px;
   text-indent: -16px;
 }
