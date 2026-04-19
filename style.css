@@ -513,7 +513,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 288/162;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -523,7 +523,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 647.2/585.6;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -533,7 +533,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 647.2/585.6;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -543,7 +543,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 478.6/262.4;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -553,7 +553,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 300.8/585.6;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -563,7 +563,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 288/162;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -573,7 +573,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 288/162;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -585,7 +585,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 192/108;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -595,7 +595,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 384/216.2;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -605,7 +605,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 384/216.2;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -615,7 +615,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 384/360.2;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -625,7 +625,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 384/296.4;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
@@ -635,9 +635,13 @@ h3 {
   background-size: 90%;
   aspect-ratio: 384/296.4;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
+}
+
+.step-spotify-friction-* {
+  
 }
 
 .step-spotify-conclusion.step-image {
@@ -645,7 +649,7 @@ h3 {
   background-size: 90%;
   aspect-ratio: 384/216.2;
   background-position: center top;
-  mask: linear-gradient(0deg, color-mix(in srgb, var(--bg-solid) 0%, transparent), color-mix(in srgb, var(--bg-solid) 100%, transparent) 30%);
+ 
   min-height: auto;
   filter: drop-shadow(0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent));
 }
