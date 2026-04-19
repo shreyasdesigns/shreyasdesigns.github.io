@@ -521,7 +521,7 @@ h3 {
 }
 
 .step-viewer-problem.step-image img{
-  width: 100%
+  width: 100%;
   min-height: auto;
   box-shadow: 0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent);
 }
@@ -577,7 +577,7 @@ h3 {
 }
 
 .step-spotify-friction-2.step-image img{
-  width: 100%
+  width: 100%;
   min-height: auto;
   box-shadow: 0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent);
 }
@@ -586,10 +586,6 @@ h3 {
   width: 100%;
   min-height: auto;
   box-shadow: 0px 8px 8px color-mix(in srgb, var(--divider) 100%, transparent);
-}
-
-.step-spotify-friction-* {
-  
 }
 
 .step-spotify-conclusion.step-image img{
